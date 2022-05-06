@@ -105,8 +105,8 @@ lbl_804EE370:
 	.4byte lbl_80462AB4
 	.4byte lbl_80462AB4
 	.4byte lbl_80462AB4
-	.4byte lbl_80462AB4
-	.4byte lbl_80462AB4
+	.4byte lbl_80462A00
+	.4byte lbl_804629F8
 	.4byte lbl_80462AB4
 	.4byte lbl_80462A50
 	.4byte lbl_80462AA0
