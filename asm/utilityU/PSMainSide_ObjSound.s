@@ -12,7 +12,7 @@ lbl_8049CFA0:
 .global lbl_8049CFB8
 lbl_8049CFB8:
 	.asciz "P2Assert"
-	.skip 3
+.balign 4
 .global lbl_8049CFC4
 lbl_8049CFC4:
 	.4byte 0x50534D61
