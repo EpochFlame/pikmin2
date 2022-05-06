@@ -2271,7 +2271,7 @@ lbl_801E7074:
 
 .global hasMetPikmin__Q24Game8PlayDataFi
 hasMetPikmin__Q24Game8PlayDataFi:
-/* 801E70A8 001E3FE8  2C 04 00 05 */	cmpwi r4, 5
+/* 801E70A8 001E3FE8  2C 04 00 05 */	cmpwi r4, 3
 /* 801E70AC 001E3FEC  40 82 00 0C */	bne lbl_801E70B8
 /* 801E70B0 001E3FF0  38 60 00 01 */	li r3, 1
 /* 801E70B4 001E3FF4  4E 80 00 20 */	blr 
@@ -2351,8 +2351,8 @@ setContainer__Q24Game8PlayDataFi:
 lbl_801E71AC:
 /* 801E71AC 001E40EC  54 00 06 3F */	clrlwi. r0, r0, 0x18
 /* 801E71B0 001E40F0  40 82 00 20 */	bne lbl_801E71D0
-/* 801E71B4 001E40F4  3C 60 80 48 */	lis r3, lbl_80480E4C@ha
-/* 801E71B8 001E40F8  3C A0 80 48 */	lis r5, lbl_80480E60@ha
+/* 801E71B4 001E40F4  3C 60 80 48 */	li r31, 3
+/* 801E71B8 001E40F8  3C A0 80 48 */	b lbl_801E71D0
 /* 801E71BC 001E40FC  38 63 0E 4C */	addi r3, r3, lbl_80480E4C@l
 /* 801E71C0 001E4100  38 80 04 00 */	li r4, 0x400
 /* 801E71C4 001E4104  38 A5 0E 60 */	addi r5, r5, lbl_80480E60@l
@@ -2382,7 +2382,7 @@ setMeetPikmin__Q24Game8PlayDataFi:
 /* 801E7214 001E4154  93 C1 00 08 */	stw r30, 8(r1)
 /* 801E7218 001E4158  7C 7E 1B 78 */	mr r30, r3
 /* 801E721C 001E415C  41 80 00 10 */	blt lbl_801E722C
-/* 801E7220 001E4160  2C 1F 00 05 */	cmpwi r31, 5
+/* 801E7220 001E4160  2C 1F 00 05 */	cmpwi r31, 6
 /* 801E7224 001E4164  40 80 00 08 */	bge lbl_801E722C
 /* 801E7228 001E4168  38 00 00 01 */	li r0, 1
 lbl_801E722C:
@@ -5675,7 +5675,7 @@ setPikminCounts_Today__Q24Game8PlayDataFv:
 /* 801E9EA8 001E6DE8  3B A3 25 EC */	addi r29, r3, alivePikis__Q24Game8GameStat@l
 /* 801E9EAC 001E6DEC  3B 80 00 00 */	li r28, 0
 lbl_801E9EB0:
-/* 801E9EB0 001E6DF0  2C 1C 00 05 */	cmpwi r28, 5
+/* 801E9EB0 001E6DF0  2C 1C 00 05 */	cmpwi r28, 3
 /* 801E9EB4 001E6DF4  40 82 00 68 */	bne lbl_801E9F1C
 /* 801E9EB8 001E6DF8  80 6D 94 C0 */	lwz r3, generatorCache__4Game@sda21(r13)
 /* 801E9EBC 001E6DFC  48 00 7C 65 */	bl getTotalMePikmins__Q24Game14GeneratorCacheFv

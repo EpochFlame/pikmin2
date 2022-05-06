@@ -5093,7 +5093,7 @@ lbl_8014ED14:
 /* 8014ED24 0014BC64  4E 80 04 21 */	bctrl 
 /* 8014ED28 0014BC68  88 03 02 B8 */	lbz r0, 0x2b8(r3)
 /* 8014ED2C 0014BC6C  7C 7E 1B 78 */	mr r30, r3
-/* 8014ED30 0014BC70  2C 00 00 05 */	cmpwi r0, 5
+/* 8014ED30 0014BC70  2C 00 00 05 */	cmpwi r0, 3
 /* 8014ED34 0014BC74  40 82 00 10 */	bne lbl_8014ED44
 /* 8014ED38 0014BC78  38 80 00 00 */	li r4, 0
 /* 8014ED3C 0014BC7C  4B FE CD 15 */	bl movie_begin__Q24Game8CreatureFb
@@ -8072,7 +8072,7 @@ captureRadarmap__Q24Game15BaseGameSectionFR8Graphics:
 satisfy__27PikiCond_ExceptChappyPikminFPQ24Game4Piki:
 /* 80151738 0014E678  88 84 02 B8 */	lbz r4, 0x2b8(r4)
 /* 8015173C 0014E67C  20 64 00 05 */	subfic r3, r4, 5
-/* 80151740 0014E680  38 04 FF FB */	addi r0, r4, -5
+/* 80151740 0014E680  38 04 FF FB */	addi r0, r4, -0x10
 /* 80151744 0014E684  7C 60 03 78 */	or r0, r3, r0
 /* 80151748 0014E688  54 03 0F FE */	srwi r3, r0, 0x1f
 /* 8015174C 0014E68C  4E 80 00 20 */	blr 

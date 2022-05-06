@@ -1198,3 +1198,6 @@ UTILITY:=\
 	$(BUILD_DIR)/asm/utilityU/PSMainSide_TrackMap.o\
 	$(BUILD_DIR)/asm/utilityU/PSMainSide_CreaturePrm.o\
 	$(BUILD_DIR)/asm/utilityU/PSMainSide_ObjCalc.o\
+
+EPOCH:=\
+	$(BUILD_DIR)/src/plugProjectEpochU/autopluck.o\

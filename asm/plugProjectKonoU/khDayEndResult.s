@@ -862,11 +862,11 @@ __ct__Q32kh6Screen4IncPFv:
 /* 80402998 003FF8D8  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 8040299C 003FF8DC  4B DE 74 69 */	bl getPikminCount_Yesterday__Q24Game8PlayDataFi
 /* 804029A0 003FF8E0  90 7E 00 0C */	stw r3, 0xc(r30)
-/* 804029A4 003FF8E4  38 80 00 03 */	li r4, 3
+/* 804029A4 003FF8E4  38 80 00 03 */	li r4, 5
 /* 804029A8 003FF8E8  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 804029AC 003FF8EC  4B DE 74 59 */	bl getPikminCount_Yesterday__Q24Game8PlayDataFi
 /* 804029B0 003FF8F0  90 7E 00 10 */	stw r3, 0x10(r30)
-/* 804029B4 003FF8F4  38 80 00 05 */	li r4, 5
+/* 804029B4 003FF8F4  38 80 00 05 */	li r4, 3
 /* 804029B8 003FF8F8  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 804029BC 003FF8FC  4B DE 74 49 */	bl getPikminCount_Yesterday__Q24Game8PlayDataFi
 /* 804029C0 003FF900  90 7E 00 14 */	stw r3, 0x14(r30)
@@ -886,11 +886,11 @@ __ct__Q32kh6Screen4IncPFv:
 /* 804029F8 003FF938  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 804029FC 003FF93C  4B DE 73 91 */	bl getPikminCount_Today__Q24Game8PlayDataFi
 /* 80402A00 003FF940  90 7E 00 24 */	stw r3, 0x24(r30)
-/* 80402A04 003FF944  38 80 00 03 */	li r4, 3
+/* 80402A04 003FF944  38 80 00 03 */	li r4, 5
 /* 80402A08 003FF948  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 80402A0C 003FF94C  4B DE 73 81 */	bl getPikminCount_Today__Q24Game8PlayDataFi
 /* 80402A10 003FF950  90 7E 00 28 */	stw r3, 0x28(r30)
-/* 80402A14 003FF954  38 80 00 05 */	li r4, 5
+/* 80402A14 003FF954  38 80 00 05 */	li r4, 3
 /* 80402A18 003FF958  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 80402A1C 003FF95C  4B DE 73 71 */	bl getPikminCount_Today__Q24Game8PlayDataFi
 /* 80402A20 003FF960  90 7E 00 2C */	stw r3, 0x2c(r30)
