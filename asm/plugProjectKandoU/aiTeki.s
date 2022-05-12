@@ -205,12 +205,25 @@ exec__Q26PikiAI7ActTekiFv:
 lbl_80212B58:
 /* 80212B58 0020FA98  80 7F 00 04 */	lwz r3, 4(r31)
 /* 80212B5C 0020FA9C  4B F3 63 D9 */	bl getStateID__Q24Game4PikiFv
-/* 80212B60 0020FAA0  2C 03 00 15 */	cmpwi r3, 0x15
+/* 80212B60 0020FAA0  2C 03 00 15 */	cmpwi r3, 0x17 # bury instead of panic
 /* 80212B64 0020FAA4  41 82 00 2C */	beq lbl_80212B90
+# only bury bulbmin
+li r5, 0x15 		# set panic state
+lwz r3, 4(r31) 		# load pikmin pointer
+lbz r11, 0x2b8(r3) 	# load piki type id
+cmpwi r11, 5 		# check if bulbmin
+beq lbl_bury 		# if bulbmin, bury
+bl getStateID__Q24Game4PikiFv
+cmpwi r3, 0x15 		# check for panic
+beq lbl_80212B90
+b lbl_panic
+lbl_bury:
+li r5, 0x17 		# if bulbmin, bury instead of panic
+lbl_panic:
 /* 80212B68 0020FAA8  38 00 00 03 */	li r0, 3
 /* 80212B6C 0020FAAC  38 C1 00 08 */	addi r6, r1, 8
 /* 80212B70 0020FAB0  B0 01 00 08 */	sth r0, 8(r1)
-/* 80212B74 0020FAB4  38 A0 00 15 */	li r5, 0x15
+#/* 80212B74 0020FAB4  38 A0 00 15 */	li r5, 0x17 # bury instead of panic
 /* 80212B78 0020FAB8  80 9F 00 04 */	lwz r4, 4(r31)
 /* 80212B7C 0020FABC  80 64 02 8C */	lwz r3, 0x28c(r4)
 /* 80212B80 0020FAC0  81 83 00 00 */	lwz r12, 0(r3)
