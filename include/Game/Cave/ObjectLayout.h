@@ -3,13 +3,14 @@
 
 #include "types.h"
 #include "CNode.h"
+#include "Vector3.h"
 
 namespace Game {
 struct ObjectLayoutNode : public CNode {
-	virtual int getObjectId();
-	virtual u8 getObjectType();
-	virtual int getBirthCount();
-	virtual double getDirection();
+	virtual int getObjectId()   = 0;
+	virtual u32 getObjectType() = 0;
+	virtual int getBirthCount() = 0;
+	virtual float getDirection();
 	virtual int getBirthDoorIndex();
 	virtual void getBirthPosition(float&, float&);
 	virtual u32 getExtraCode();
@@ -25,9 +26,7 @@ struct ObjectLayoutInfo {
 
 namespace Cave {
 enum CardinalDirection { CD_UP, CD_RIGHT, CD_DOWN, CD_LEFT };
-struct DoorNode {
-	bool isDoorAdjust(DoorNode*);
-};
+struct DoorNode;
 struct UnitInfo {
 	DoorNode* m_doorNode;            // _00
 	struct AdjustNode* m_adjustNode; // _04
@@ -38,31 +37,11 @@ struct UnitInfo {
 
 	int getUnitSizeX();
 	int getUnitSizeY();
+	int getUnitKind();
 };
 
-struct MapNode : public CNode {
-	UnitInfo* m_unitInfo; // _18
-
-	// Types are EnemyNode, GateNode and ItemNode respectively
-	ObjectLayoutNode* m_enemyNode; // _1C
-	ObjectLayoutNode* m_gateNode;  // _20
-	ObjectLayoutNode* m_itemNode;  // _24
-
-	MapNode** m_nodeList; // _28
-	s32 m_xGridOffset;    // _2C
-	s32 m_yGridOffset;    // _30
-	s32 m_enemyScore;     // _34
-	s32 m_nodeScore;      // _38
-	s32 m_vsScore;        // _3C
-
-	int getNodeOffsetX();
-	int getNodeOffsetY();
-	int getNumDoors();
-	int getDoorOffset(int, int&, int&);
-	CardinalDirection getDoorDirect(int);
-	bool isDoorClose(int);
-	DoorNode* getDoorNode(int);
-};
+struct BaseGen;
+struct MapNode;
 
 struct ObjectLayout : public ObjectLayoutInfo {
 	ObjectLayout(MapNode*);

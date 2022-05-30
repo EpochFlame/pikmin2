@@ -455,7 +455,7 @@ YAMASHITA:=\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/farmMgr.o\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/genEnemy.o\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/timeMgr.o\
-	$(BUILD_DIR)/asm/plugProjectYamashitaU/pelplantGenerator.o\
+	$(BUILD_DIR)/src/plugProjectYamashitaU/pelplantGenerator.o\
 	$(BUILD_DIR)/src/plugProjectYamashitaU/enemyInteractActions.o\
 	$(BUILD_DIR)/src/plugProjectYamashitaU/enemyAnimatorBase.o\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/enemyStoneMgr.o\
@@ -482,7 +482,7 @@ YAMASHITA:=\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/enemyMgrBase.o\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/enemyFSM.o\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/singleGS_ZukanParms.o\
-	$(BUILD_DIR)/asm/plugProjectYamashitaU/treasureLightMgr.o\
+	$(BUILD_DIR)/src/plugProjectYamashitaU/treasureLightMgr.o\
 	$(BUILD_DIR)/asm/plugProjectYamashitaU/effectAnimator.o\
 
 KANDO:=\
@@ -639,13 +639,13 @@ NISHIMURA:=\
 	$(BUILD_DIR)/src/plugProjectNishimuraU/RandMapChecker.o\
 	$(BUILD_DIR)/asm/plugProjectNishimuraU/RandMapUnit.o\
 	$(BUILD_DIR)/asm/plugProjectNishimuraU/RandEnemyUnit.o\
-	$(BUILD_DIR)/asm/plugProjectNishimuraU/DoorNode.o\
+	$(BUILD_DIR)/src/plugProjectNishimuraU/DoorNode.o\
 	$(BUILD_DIR)/asm/plugProjectNishimuraU/MapUnitGenerator.o\
 	$(BUILD_DIR)/src/plugProjectNishimuraU/MapCreator.o\
 	$(BUILD_DIR)/asm/plugProjectNishimuraU/RandMapScore.o\
-	$(BUILD_DIR)/asm/plugProjectNishimuraU/ItemUnit.o\
+	$(BUILD_DIR)/src/plugProjectNishimuraU/ItemUnit.o\
 	$(BUILD_DIR)/asm/plugProjectNishimuraU/RandItemUnit.o\
-	$(BUILD_DIR)/asm/plugProjectNishimuraU/GateUnit.o\
+	$(BUILD_DIR)/src/plugProjectNishimuraU/GateUnit.o\
 	$(BUILD_DIR)/asm/plugProjectNishimuraU/RandGateUnit.o\
 	$(BUILD_DIR)/src/plugProjectNishimuraU/ObjectLayout.o\
 	$(BUILD_DIR)/asm/plugProjectNishimuraU/CameraMgr.o\
@@ -908,6 +908,7 @@ OGAWA:=\
 	$(BUILD_DIR)/asm/plugProjectOgawaU/ogSceneFloor.o\
 	$(BUILD_DIR)/asm/plugProjectOgawaU/ogObjCave.o\
 	$(BUILD_DIR)/asm/plugProjectOgawaU/ogSceneCave.o\
+	$(BUILD_DIR)/src/plugProjectOgawaU/ogObjAnaDemo.o\
 	$(BUILD_DIR)/asm/plugProjectOgawaU/ogObjAnaDemo.o\
 	$(BUILD_DIR)/asm/plugProjectOgawaU/ogSceneAnaDemo.o\
 	$(BUILD_DIR)/asm/plugProjectOgawaU/ogObjChallenge2P.o\

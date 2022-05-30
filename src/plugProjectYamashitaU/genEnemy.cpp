@@ -1,620 +1,9 @@
 #include "types.h"
-
-/*
-    Generated from dpostproc
-
-    .section .rodata  # 0x804732E0 - 0x8049E220
-    .global lbl_8047B750
-    lbl_8047B750:
-        .asciz "genEnemy"
-        .skip 3
-    .global lbl_8047B75C
-    lbl_8047B75C:
-        .asciz "object type"
-    .global lbl_8047B768
-    lbl_8047B768:
-        .4byte 0x934782F0
-        .4byte 0x835A8362
-        .4byte 0x83670000
-    .global lbl_8047B774
-    lbl_8047B774:
-        .4byte 0x934782F0
-        .4byte 0x94AD90B6
-        .4byte 0x00000000
-        .asciz "\t\t# %s \r\n"
-        .skip 2
-        .asciz "teki_birth_type"
-        .asciz "teki_num"
-        .skip 3
-        .asciz "face direction"
-        .skip 1
-        .asciz "0:point 1:circle"
-        .skip 3
-        .asciz "appear radius"
-        .skip 2
-        .asciz "enemy size"
-        .skip 1
-        .asciz "\t\t# Version \r\n"
-        .skip 1
-        .4byte 0x90D48352
-        .4byte 0x83608383
-        .4byte 0x83628373
-        .4byte 0x815B0000
-        .4byte 0x90C28352
-        .4byte 0x83608383
-        .4byte 0x83628373
-        .4byte 0x815B0000
-        .4byte 0x89A98352
-        .4byte 0x83608383
-        .4byte 0x83628373
-        .4byte 0x815B0000
-        .4byte 0x90D48360
-        .4byte 0x83838362
-        .4byte 0x8373815B
-        .4byte 0x00000000
-        .4byte 0x90C28360
-        .4byte 0x83838362
-        .4byte 0x8373815B
-        .4byte 0x00000000
-        .4byte 0x89A98360
-        .4byte 0x83838362
-        .4byte 0x8373815B
-        .4byte 0x00000000
-        .4byte 0x90C2837C
-        .4byte 0x8393834B
-        .4byte 0x83569190
-        .4byte 0x00000000
-        .4byte 0x90D4837C
-        .4byte 0x8393834B
-        .4byte 0x83569190
-        .4byte 0x00000000
-        .4byte 0x89A9837C
-        .4byte 0x8393834B
-        .4byte 0x83569190
-        .4byte 0x00000000
-        .4byte 0x8D95837C
-        .4byte 0x8393834B
-        .4byte 0x83569190
-        .4byte 0x00000000
-        .4byte 0x9492837C
-        .4byte 0x8393834B
-        .4byte 0x83569190
-        .4byte 0x00000000
-        .4byte 0x837C837C
-        .4byte 0x834B8356
-        .4byte 0x91900000
-        .4byte 0x83498349
-        .4byte 0x834B836C
-        .4byte 0x83828360
-        .4byte 0x00000000
-        .4byte 0x836F836F
-        .4byte 0x8352834B
-        .4byte 0x836C0000
-        .4byte 0x83438382
-        .4byte 0x834B8347
-        .4byte 0x838B0000
-        .4byte 0x837D838D
-        .4byte 0x834B8347
-        .4byte 0x838B0000
-        .4byte 0x83458357
-        .4byte 0x83938352
-        .4byte 0x818A0000
-        .4byte 0x83678372
-        .4byte 0x83938352
-        .4byte 0x00000000
-        .4byte 0x83458357
-        .4byte 0x83938352
-        .4byte 0x81890000
-        .4byte 0x8388838D
-        .4byte 0x83438380
-        .4byte 0x83560000
-        .4byte 0x834B8358
-        .4byte 0x8371836F
-        .4byte 0x00000000
-        .4byte 0x83548389
-        .4byte 0x83438380
-        .4byte 0x83560000
-        .4byte 0x8375835E
-        .4byte 0x83688362
-        .4byte 0x834E838A
-        .4byte 0x00000000
-        .4byte 0x837E8359
-        .4byte 0x8375835E
-        .4byte 0x83688362
-        .4byte 0x834E838A
-        .4byte 0x00000000
-        .4byte 0x83668393
-        .4byte 0x834C8380
-        .4byte 0x83560000
-        .4byte 0x83748345
-        .4byte 0x835A8393
-        .4byte 0x83688362
-        .4byte 0x834E838A
-        .4byte 0x00000000
-        .4byte 0x834E8343
-        .4byte 0x815B8393
-        .4byte 0x83608383
-        .4byte 0x83628373
-        .4byte 0x815B0000
-        .4byte 0x83788372
-        .4byte 0x815B8360
-        .4byte 0x83838362
-        .4byte 0x8373815B
-        .4byte 0x00000000
-        .4byte 0x8349836A
-        .4byte 0x83548389
-        .4byte 0x83430000
-        .4byte 0x8384834C
-        .4byte 0x83608383
-        .4byte 0x83628373
-        .4byte 0x815B0000
-        .4byte 0x83778372
-        .4byte 0x834B8389
-        .4byte 0x83580000
-        .4byte 0x834E837D
-        .4byte 0x83608383
-        .4byte 0x83628373
-        .4byte 0x815B0000
-        .4byte 0x836F834E
-        .4byte 0x835F8393
-        .4byte 0x00000000
-        .4byte 0x836E8365
-        .4byte 0x8369835E
-        .4byte 0x837D8353
-        .4byte 0x00000000
-        .4byte 0x83708393
-        .4byte 0x83828368
-        .4byte 0x834C0000
-        .4byte 0x91E58370
-        .4byte 0x83938382
-        .4byte 0x8368834C
-        .4byte 0x00000000
-        .4byte 0x83708393
-        .4byte 0x83828368
-        .4byte 0x834C9183
-        .4byte 0x00000000
-        .4byte 0x83748347
-        .4byte 0x8374834C
-        .4byte 0x00000000
-        .4byte 0x835E8393
-        .4byte 0x837C837C
-        .4byte 0x00000000
-        .4byte 0x834E838D
-        .4byte 0x815B836F
-        .4byte 0x815B0000
-        .4byte 0x8371834A
-        .4byte 0x838A834C
-        .4byte 0x836D8352
-        .4byte 0x00000000
-        .4byte 0x82A882A8
-        .4byte 0x82A282CA
-        .4byte 0x82D382AE
-        .4byte 0x82E88169
-        .4byte 0x8FAC816A
-        .4byte 0x00000000
-        .4byte 0x8CCD82EA
-        .4byte 0x82A882A8
-        .4byte 0x82A282CA
-        .4byte 0x82D382AE
-        .4byte 0x82E88169
-        .4byte 0x8FAC816A
-        .4byte 0x00000000
-        .4byte 0x82A882A8
-        .4byte 0x82A282CA
-        .4byte 0x82D382AE
-        .4byte 0x82E88169
-        .4byte 0x91E5816A
-        .4byte 0x00000000
-        .4byte 0x8CCD82EA
-        .4byte 0x82A882A8
-        .4byte 0x82A282CA
-        .4byte 0x82D382AE
-        .4byte 0x82E88169
-        .4byte 0x91E5816A
-        .4byte 0x00000000
-        .4byte 0x8EE189E8
-        .4byte 0x81698FAC
-        .4byte 0x816A0000
-        .4byte 0x8EE189E8
-        .4byte 0x816991E5
-        .4byte 0x816A0000
-        .4byte 0x90D4835F
-        .4byte 0x83438349
-        .4byte 0x815B8368
-        .4byte 0x00000000
-        .4byte 0x90C2835F
-        .4byte 0x83438349
-        .4byte 0x815B8368
-        .4byte 0x00000000
-        .4byte 0x837D815B
-        .4byte 0x834B838C
-        .4byte 0x83628367
-        .4byte 0x00000000
-        .4byte 0x82CB82B1
-        .4byte 0x82B682E1
-        .4byte 0x82E782B5
-        .4byte 0x00000000
-        .4byte 0x82BA82F1
-        .4byte 0x82DC82A2
-        .4byte 0x00000000
-        .4byte 0x834C8393
-        .4byte 0x834F8360
-        .4byte 0x83838362
-        .4byte 0x8373815B
-        .4byte 0x00000000
-        .4byte 0x837E8345
-        .4byte 0x838A8393
-        .4byte 0x00000000
-        .4byte 0x83748345
-        .4byte 0x835A8393
-        .4byte 0x836E8369
-        .4byte 0x83608389
-        .4byte 0x83560000
-        .4byte 0x835F837D
-        .4byte 0x834F8382
-        .4byte 0x00000000
-        .4byte 0x834E8389
-        .4byte 0x83518368
-        .4byte 0x8362834E
-        .4byte 0x838A0000
-        .4byte 0x836F834E
-        .4byte 0x835F8393
-        .4byte 0x83548389
-        .4byte 0x83430000
-        .4byte 0x89CE8349
-        .4byte 0x835E834A
-        .4byte 0x83898380
-        .4byte 0x83560000
-        .4byte 0x90858349
-        .4byte 0x835E834A
-        .4byte 0x83898380
-        .4byte 0x83560000
-        .4byte 0x834B8358
-        .4byte 0x8349835E
-        .4byte 0x834A8389
-        .4byte 0x83808356
-        .4byte 0x00000000
-        .4byte 0x93648B43
-        .4byte 0x8349835E
-        .4byte 0x834A8389
-        .4byte 0x83808356
-        .4byte 0x00000000
-        .4byte 0x949A9265
-        .4byte 0x8349835E
-        .4byte 0x834A8389
-        .4byte 0x83808356
-        .4byte 0x00000000
-        .4byte 0x8357834F
-        .4byte 0x83829183
-        .4byte 0x00000000
-        .4byte 0x83438382
-        .4byte 0x83808356
-        .4byte 0x00000000
-        .4byte 0x837A8345
-        .4byte 0x835F8343
-        .4byte 0x835F837D
-        .4byte 0x834F8382
-        .4byte 0x00000000
-        .4byte 0x836E8362
-        .4byte 0x83708360
-        .4byte 0x83838362
-        .4byte 0x8373815B
-        .4byte 0x00000000
-        .4byte 0x835E837D
-        .4byte 0x83538380
-        .4byte 0x83560000
-        .4byte 0x83498349
-        .4byte 0x83418356
-        .4byte 0x835F837D
-        .4byte 0x834F8382
-        .4byte 0x00000000
-        .4byte 0x83778372
-        .4byte 0x834B8389
-        .4byte 0x83589153
-        .4byte 0x90670000
-        .4byte 0x8345837E
-        .4byte 0x83808356
-        .4byte 0x00000000
-        .4byte 0x96DA82C8
-        .4byte 0x82B58345
-        .4byte 0x837E8380
-        .4byte 0x83560000
-        .4byte 0x8349836A
-        .4byte 0x834E8389
-        .4byte 0x83510000
-        .4byte 0x83498349
-        .4byte 0x8349835E
-        .4byte 0x834A8389
-        .4byte 0x83808356
-        .4byte 0x00000000
-        .4byte 0x834F838A
-        .4byte 0x815B8393
-        .4byte 0x834A8375
-        .4byte 0x83679763
-        .4byte 0x928E0000
-        .4byte 0x838C8362
-        .4byte 0x8368834A
-        .4byte 0x83758367
-        .4byte 0x9763928E
-        .4byte 0x00000000
-        .4byte 0x8CC592E8
-        .4byte 0x834A8375
-        .4byte 0x83679763
-        .4byte 0x928E0000
-        .4byte 0x834E837D
-        .4byte 0x83528360
-        .4byte 0x83838362
-        .4byte 0x8373815B
-        .4byte 0x00000000
-        .4byte 0x83568357
-        .4byte 0x837E92B1
-        .4byte 0x00000000
-        .4byte 0x83608372
-        .4byte 0x837A8345
-        .4byte 0x835F8343
-        .4byte 0x00000000
-        .4byte 0x8CC592E8
-        .4byte 0x83608372
-        .4byte 0x837A8345
-        .4byte 0x835F8343
-        .4byte 0x00000000
-        .4byte 0x835C8362
-        .4byte 0x834E838A
-        .4byte 0x00000000
-        .4byte 0x836E8369
-        .4byte 0x83688362
-        .4byte 0x834E838A
-        .4byte 0x00000000
-        .4byte 0x8D9582A2
-        .4byte 0x906C835E
-        .4byte 0x83438384
-        .4byte 0x00000000
-        .4byte 0x835F8393
-        .4byte 0x83538380
-        .4byte 0x83560000
-        .4byte 0x50656C6C
-        .4byte 0x6574496E
-        .4byte 0x69744172
-        .4byte 0x67000000
-
-    .section .data, "wa"  # 0x8049E220 - 0x804EFC20
-    .global lbl_804ADA18
-    lbl_804ADA18:
-        .4byte lbl_80125970
-        .4byte lbl_80125990
-        .4byte lbl_801259FC
-        .4byte lbl_80125A68
-        .4byte lbl_80125A8C
-        .4byte lbl_80125AB0
-        .4byte lbl_80125AD4
-        .4byte lbl_80125AF8
-        .4byte lbl_80125B1C
-        .4byte lbl_80125B40
-        .4byte lbl_80125B64
-        .4byte lbl_80125B88
-        .4byte lbl_80125BF4
-        .4byte lbl_80125C3C
-        .4byte lbl_80125C18
-        .4byte lbl_80125C60
-        .4byte lbl_80125C84
-        .4byte lbl_80125BAC
-        .4byte lbl_80125BD0
-        .4byte lbl_80125CA4
-        .4byte lbl_80125CC4
-        .4byte lbl_80125CE8
-        .4byte lbl_80125D0C
-        .4byte lbl_80125D2C
-        .4byte lbl_80125D50
-        .4byte lbl_80125D74
-        .4byte lbl_80125D98
-        .4byte lbl_80125DBC
-        .4byte lbl_80125DE0
-        .4byte lbl_80125E04
-        .4byte lbl_80125E28
-        .4byte lbl_80125E4C
-        .4byte lbl_80125E70
-        .4byte lbl_80125E94
-        .4byte lbl_80125EB8
-        .4byte lbl_80125EDC
-        .4byte lbl_80125F00
-        .4byte lbl_80125F24
-        .4byte lbl_80125F48
-        .4byte lbl_80125F90
-        .4byte lbl_80125F6C
-        .4byte lbl_80125FB4
-        .4byte lbl_80125A20
-        .4byte lbl_80125A44
-        .4byte lbl_801259B4
-        .4byte lbl_801259D8
-        .4byte lbl_80125FD8
-        .4byte lbl_80126020
-        .4byte lbl_80126044
-        .4byte lbl_80126068
-        .4byte lbl_801260B0
-        .4byte lbl_801260F8
-        .4byte lbl_8012611C
-        .4byte lbl_8012623C
-        .4byte lbl_80126260
-        .4byte lbl_80126284
-        .4byte lbl_801262A8
-        .4byte lbl_801262CC
-        .4byte lbl_801262F0
-        .4byte lbl_80126314
-        .4byte lbl_80126338
-        .4byte lbl_8012635C
-        .4byte lbl_80126380
-        .4byte lbl_801263C8
-        .4byte lbl_801263EC
-        .4byte lbl_80126410
-        .4byte lbl_80126434
-        .4byte lbl_80126458
-        .4byte lbl_8012647C
-        .4byte lbl_801264A0
-        .4byte lbl_801264C4
-        .4byte lbl_801264E8
-        .4byte lbl_80126530
-        .4byte lbl_80126554
-        .4byte lbl_80126728
-        .4byte lbl_80126578
-        .4byte lbl_801265E4
-        .4byte lbl_80126608
-        .4byte lbl_8012662C
-        .4byte lbl_80126674
-        .4byte lbl_80126140
-        .4byte lbl_80125FFC
-        .4byte lbl_80126728
-        .4byte lbl_80126728
-        .4byte lbl_80126698
-        .4byte lbl_80126164
-        .4byte lbl_80126188
-        .4byte lbl_801261AC
-        .4byte lbl_801261D0
-        .4byte lbl_801261F4
-        .4byte lbl_80126218
-        .4byte lbl_8012608C
-        .4byte lbl_801260D4
-        .4byte lbl_801263A4
-        .4byte lbl_80126704
-        .4byte lbl_8012659C
-        .4byte lbl_801265C0
-        .4byte lbl_80126650
-        .4byte lbl_801266E0
-        .4byte lbl_801266BC
-        .4byte lbl_80126728
-        .4byte lbl_8012650C
-    .global __vt__Q24Game18EnemyGeneratorBase
-    __vt__Q24Game18EnemyGeneratorBase:
-        .4byte 0
-        .4byte 0
-        .4byte __dt__Q24Game18EnemyGeneratorBaseFv
-        .4byte getChildCount__5CNodeFv
-        .4byte doWrite__Q24Game18EnemyGeneratorBaseFR6Stream
-        .4byte doRead__Q24Game18EnemyGeneratorBaseFR6Stream
-        .4byte getLatestVersion__Q24Game18EnemyGeneratorBaseFv
-        .4byte draw__Q24Game18EnemyGeneratorBaseFR8GraphicsPQ24Game9Generator
-        .4byte getInitialParam__Q24Game18EnemyGeneratorBaseFv
-    .global __vt__Q24Game6GenArg
-    __vt__Q24Game6GenArg:
-        .4byte 0
-        .4byte 0
-        .4byte getName__Q24Game6GenArgFv
-    .global __vt__Q24Game14GenObjectEnemy
-    __vt__Q24Game14GenObjectEnemy:
-        .4byte 0
-        .4byte 0
-        .4byte doWrite__Q24Game14GenObjectEnemyFR6Stream
-        .4byte ramSaveParameters__Q24Game14GenObjectEnemyFR6Stream
-        .4byte ramLoadParameters__Q24Game14GenObjectEnemyFR6Stream
-        .4byte doEvent__Q24Game7GenBaseFUl
-        .4byte doRead__Q24Game14GenObjectEnemyFR6Stream
-        .4byte update__Q24Game9GenObjectFPQ24Game9Generator
-        .4byte render__Q24Game14GenObjectEnemyFR8GraphicsPQ24Game9Generator
-        .4byte getLatestVersion__Q24Game9GenObjectFv
-        .4byte getShape__Q24Game14GenObjectEnemyFv
-        .4byte updateUseList__Q24Game14GenObjectEnemyFPQ24Game9Generatori
-        .4byte generate__Q24Game14GenObjectEnemyFPQ24Game9Generator
-        .4byte birth__Q24Game14GenObjectEnemyFPQ24Game6GenArg
-        .4byte "generatorMakeMatrix__Q24Game9GenObjectFR7MatrixfR10Vector3<f>"
-        .4byte getDebugInfo__Q24Game9GenObjectFPc
-
-    .section .sdata2, "a"     # 0x80516360 - 0x80520E40
-    .global lbl_80517EA8
-    lbl_80517EA8:
-        .4byte 0x42C80000
-    .global lbl_80517EAC
-    lbl_80517EAC:
-        .4byte 0x00000000
-    .global lbl_80517EB0
-    lbl_80517EB0:
-        .4byte 0x47000000
-    .global lbl_80517EB4
-    lbl_80517EB4:
-        .4byte 0x40C90FDB
-    .global lbl_80517EB8
-    lbl_80517EB8:
-        .4byte 0x420C0000
-    .global lbl_80517EBC
-    lbl_80517EBC:
-        .float 1.0
-    .global lbl_80517EC0
-    lbl_80517EC0:
-        .float 0.5
-        .4byte 0x00000000
-    .global lbl_80517EC8
-    lbl_80517EC8:
-        .4byte 0x43300000
-        .4byte 0x80000000
-    .global lbl_80517ED0
-    lbl_80517ED0:
-        .4byte 0x40490FDB
-    .global lbl_80517ED4
-    lbl_80517ED4:
-        .4byte 0x3BB60B61
-    .global lbl_80517ED8
-    lbl_80517ED8:
-        .4byte 0x74656B69
-        .4byte 0x00000000
-    .global lbl_80517EE0
-    lbl_80517EE0:
-        .4byte 0x8352834B
-        .4byte 0x836C0000
-    .global lbl_80517EE8
-    lbl_80517EE8:
-        .4byte 0x8371836F
-        .4byte 0x00000000
-    .global lbl_80517EF0
-    lbl_80517EF0:
-        .4byte 0x8369837D
-        .4byte 0x83590000
-    .global lbl_80517EF8
-    lbl_80517EF8:
-        .4byte 0x8349835E
-        .4byte 0x837D0000
-    .global lbl_80517F00
-    lbl_80517F00:
-        .4byte 0x82ED82BD
-        .4byte 0x82B00000
-    .global lbl_80517F08
-    lbl_80517F08:
-        .4byte 0x82C282AD
-        .4byte 0x82B50000
-    .global lbl_80517F10
-    lbl_80517F10:
-        .4byte 0x90E791E3
-        .4byte 0x8E860000
-    .global lbl_80517F18
-    lbl_80517F18:
-        .4byte 0x8357834F
-        .4byte 0x83820000
-    .global lbl_80517F20
-    lbl_80517F20:
-        .4byte 0x8D9582A2
-        .4byte 0x906C0000
-    .global lbl_80517F28
-    lbl_80517F28:
-        .4byte 0x96A2936F
-        .4byte 0x985E0000
-    .global lbl_80517F30
-    lbl_80517F30:
-        .4byte 0x42480000
-    .global lbl_80517F34
-    lbl_80517F34:
-        .4byte 0x41200000
-    .global lbl_80517F38
-    lbl_80517F38:
-        .4byte 0x42200000
-    .global lbl_80517F3C
-    lbl_80517F3C:
-        .4byte 0xC1200000
-    .global lbl_80517F40
-    lbl_80517F40:
-        .4byte 0x25732078
-        .4byte 0x20256400
-    .global lbl_80517F48
-    lbl_80517F48:
-        .4byte 0x47656E41
-        .4byte 0x72670000
-*/
+#include "Game/gameGenerator.h"
+#include "Game/MapMgr.h"
+#include "Dolphin/rand.h"
+#include "sysMath.h"
+#include "Game/Creature.h"
 
 namespace Game {
 
@@ -623,92 +12,30 @@ namespace Game {
  * Address:	80124778
  * Size:	00003C
  */
-void makeObjectEnemy()
-{
-	/*
-	stwu     r1, -0x10(r1)
-	mflr     r0
-	li       r3, 0x50
-	stw      r0, 0x14(r1)
-	bl       __nw__FUl
-	or.      r0, r3, r3
-	beq      lbl_801247A0
-	li       r4, 1
-	bl       __ct__Q24Game14GenObjectEnemyFv
-	mr       r0, r3
-
-lbl_801247A0:
-	mr       r3, r0
-	lwz      r0, 0x14(r1)
-	mtlr     r0
-	addi     r1, r1, 0x10
-	blr
-	*/
-}
+GenObject* makeObjectEnemy(void) { return new GenObjectEnemy; }
 
 /*
  * --INFO--
  * Address:	801247B4
  * Size:	0000D0
+ * Nearly matches; only mismatch is a misordered pair of epilogue instructions.
+ * https://decomp.me/scratch/O7lwP
  */
 GenObjectEnemy::GenObjectEnemy()
+    : GenObject('teki', "object type", "“G‚ðƒZƒbƒg")
+    , m_enemyID(EnemyTypeID::EnemyID_Pelplant)
+    , m_spawnType(1)
+    , m_tekiBirthType(0)
+    , m_tekiNum(1)
+    , m_appearRadius(100.0f)
+    , m_direction(0)
+    , m_enemySize(0)
+    , m_otakaraItemCode(0)
+    , m_enemyGenerator(nullptr)
+    , m_byte_4C(0)
 {
-	/*
-	stwu     r1, -0x10(r1)
-	mflr     r0
-	stw      r0, 0x14(r1)
-	extsh.   r0, r4
-	stw      r31, 0xc(r1)
-	mr       r31, r3
-	beq      lbl_801247D8
-	addi     r0, r31, 0x4d
-	stw      r0, 0(r31)
-
-lbl_801247D8:
-	lis      r4, lbl_8047B75C@ha
-	lis      r3, lbl_8047B768@ha
-	addi     r6, r4, lbl_8047B75C@l
-	lis      r4, 0x74656B69@ha
-	addi     r7, r3, lbl_8047B768@l
-	addi     r5, r4, 0x74656B69@l
-	mr       r3, r31
-	li       r4, 0
-	bl       __ct__Q24Game7GenBaseFUlPcPc
-	lis      r4, __vt__Q24Game9GenObject@ha
-	lis      r3, __vt__Q24Game14GenObjectEnemy@ha
-	addi     r0, r4, __vt__Q24Game9GenObject@l
-	li       r4, 0
-	stw      r0, 0xc(r31)
-	addi     r3, r3, __vt__Q24Game14GenObjectEnemy@l
-	li       r0, 1
-	lfs      f1, lbl_80517EA8@sda21(r2)
-	stw      r3, 0xc(r31)
-	addi     r3, r31, 0x3c
-	lfs      f0, lbl_80517EAC@sda21(r2)
-	stw      r4, 0x24(r31)
-	stb      r0, 0x28(r31)
-	stb      r4, 0x29(r31)
-	sth      r0, 0x2a(r31)
-	stfs     f1, 0x2c(r31)
-	stfs     f0, 0x30(r31)
-	stfs     f0, 0x34(r31)
-	sth      r4, 0x38(r31)
-	bl       __ct__Q24Game15EnemyPelletInfoFv
-	li       r0, 0
-	mr       r3, r31
-	stw      r0, 0x48(r31)
-	stb      r0, 0x4c(r31)
-	bl       createEnemyGenerator__Q24Game14GenObjectEnemyFv
-	lbz      r0, 0x4c(r31)
-	mr       r3, r31
-	ori      r0, r0, 1
-	stb      r0, 0x4c(r31)
-	lwz      r31, 0xc(r1)
-	lwz      r0, 0x14(r1)
-	mtlr     r0
-	addi     r1, r1, 0x10
-	blr
-	*/
+	createEnemyGenerator();
+	m_byte_4C |= 1;
 }
 
 /*
@@ -718,43 +45,19 @@ lbl_801247D8:
  */
 void GenObjectEnemy::initialise()
 {
-	/*
-	lwz      r8, factory__Q24Game16GenObjectFactory@sda21(r13)
-	lwz      r5, 0(r8)
-	lwz      r0, 4(r8)
-	cmpw     r5, r0
-	bgelr
-	lis      r4, 0x74656B69@ha
-	lwz      r3, 8(r8)
-	addi     r4, r4, 0x74656B69@l
-	slwi     r0, r5, 4
-	stwx     r4, r3, r0
-	lis      r5, makeObjectEnemy__4GameFv@ha
-	lis      r4, lbl_8047B774@ha
-	lis      r3, 0x30303035@ha
-	lwz      r0, 0(r8)
-	addi     r7, r5, makeObjectEnemy__4GameFv@l
-	lwz      r6, 8(r8)
-	addi     r5, r4, lbl_8047B774@l
-	slwi     r0, r0, 4
-	addi     r4, r3, 0x30303035@l
-	add      r3, r6, r0
-	stw      r7, 4(r3)
-	lwz      r0, 0(r8)
-	lwz      r3, 8(r8)
-	slwi     r0, r0, 4
-	add      r3, r3, r0
-	stw      r5, 8(r3)
-	lwz      r0, 0(r8)
-	lwz      r3, 8(r8)
-	slwi     r0, r0, 4
-	add      r3, r3, r0
-	stw      r4, 0xc(r3)
-	lwz      r3, 0(r8)
-	addi     r0, r3, 1
-	stw      r0, 0(r8)
-	blr
-	*/
+	GenObjectFactoryFactory* metafactory = GenObjectFactory::factory;
+
+	// Make sure we don't create a new factory over the limit
+	if (metafactory->m_count >= metafactory->m_limit) {
+		return;
+	}
+
+	// Initialise the new factory with default teki parameters
+	metafactory->m_factories[metafactory->m_count].m_typeID       = 'teki';
+	metafactory->m_factories[metafactory->m_count].m_makeFunction = &makeObjectEnemy;
+	metafactory->m_factories[metafactory->m_count].m_name         = "“G‚ð”­¶";
+	metafactory->m_factories[metafactory->m_count].m_version      = '0005';
+	metafactory->m_count++;
 }
 
 /*
@@ -776,485 +79,486 @@ void GenObjectEnemy::ramLoadParameters(Stream&) { }
  * Address:	80124918
  * Size:	0006B4
  */
-void GenObjectEnemy::generate(Game::Generator*)
+Creature* GenObjectEnemy::generate(Game::Generator*)
 {
-	/*
-	stwu     r1, -0x1b0(r1)
-	mflr     r0
-	stw      r0, 0x1b4(r1)
-	stfd     f31, 0x1a0(r1)
-	psq_st   f31, 424(r1), 0, qr0
-	stfd     f30, 0x190(r1)
-	psq_st   f30, 408(r1), 0, qr0
-	stfd     f29, 0x180(r1)
-	psq_st   f29, 392(r1), 0, qr0
-	stfd     f28, 0x170(r1)
-	psq_st   f28, 376(r1), 0, qr0
-	stfd     f27, 0x160(r1)
-	psq_st   f27, 360(r1), 0, qr0
-	stfd     f26, 0x150(r1)
-	psq_st   f26, 344(r1), 0, qr0
-	stmw     r20, 0x120(r1)
-	lfs      f1, 0x94(r4)
-	mr       r27, r4
-	lfs      f0, 0xa0(r4)
-	mr       r26, r3
-	lfs      f3, 0x98(r27)
-	lis      r3, "__ct__10Vector3<f>Fv"@ha
-	fadds    f31, f1, f0
-	lfs      f2, 0xa4(r27)
-	lfs      f1, 0x9c(r27)
-	addi     r4, r3, "__ct__10Vector3<f>Fv"@l
-	lfs      f0, 0xa8(r27)
-	fadds    f30, f3, f2
-	lwz      r7, 0x74(r27)
-	fadds    f29, f1, f0
-	lha      r0, 0x2a(r26)
-	addi     r3, r1, 0x90
-	li       r5, 0
-	li       r6, 0xc
-	subf     r29, r7, r0
-	li       r7, 0xa
-	bl       __construct_array
-	lis      r4, "__ct__10Vector3<f>Fv"@ha
-	addi     r3, r1, 0x18
-	addi     r4, r4, "__ct__10Vector3<f>Fv"@l
-	li       r5, 0
-	li       r6, 0xc
-	li       r7, 0xa
-	bl       __construct_array
-	addi     r31, r1, 0x90
-	li       r22, 0
-	mr       r28, r31
-	b        lbl_80124AA8
-
-lbl_801249D8:
-	lbz      r0, 0x28(r26)
-	cmplwi   r0, 1
-	bne      lbl_801249F4
-	stfs     f31, 0(r28)
-	stfs     f30, 4(r28)
-	stfs     f29, 8(r28)
-	b        lbl_80124AA0
-
-lbl_801249F4:
-	bl       rand
-	xoris    r3, r3, 0x8000
-	lis      r0, 0x4330
-	stw      r3, 0x10c(r1)
-	lfd      f3, lbl_80517EC8@sda21(r2)
-	stw      r0, 0x108(r1)
-	lfs      f1, lbl_80517EB0@sda21(r2)
-	lfd      f2, 0x108(r1)
-	lfs      f0, lbl_80517EB4@sda21(r2)
-	fsubs    f2, f2, f3
-	fdivs    f1, f2, f1
-	fmuls    f26, f0, f1
-	bl       rand
-	xoris    r3, r3, 0x8000
-	lis      r0, 0x4330
-	stw      r3, 0x114(r1)
-	fmr      f1, f26
-	lfd      f4, lbl_80517EC8@sda21(r2)
-	stw      r0, 0x110(r1)
-	lfs      f2, lbl_80517EB0@sda21(r2)
-	lfd      f3, 0x110(r1)
-	lfs      f0, 0x2c(r26)
-	fsubs    f3, f3, f4
-	fdivs    f2, f3, f2
-	fmuls    f28, f0, f2
-	bl       pikmin2_cosf__Ff
-	fmuls    f27, f28, f1
-	fmr      f1, f26
-	bl       pikmin2_sinf__Ff
-	fmuls    f1, f28, f1
-	lfs      f0, lbl_80517EAC@sda21(r2)
-	stfs     f1, 0(r28)
-	stfs     f0, 4(r28)
-	stfs     f27, 8(r28)
-	lfs      f0, 0(r28)
-	lfs      f1, 4(r28)
-	fadds    f0, f0, f31
-	lfs      f2, 8(r28)
-	fadds    f1, f1, f30
-	fadds    f2, f2, f29
-	stfs     f0, 0(r28)
-	stfs     f1, 4(r28)
-	stfs     f2, 8(r28)
-
-lbl_80124AA0:
-	addi     r28, r28, 0xc
-	addi     r22, r22, 1
-
-lbl_80124AA8:
-	cmpw     r22, r29
-	blt      lbl_801249D8
-	lfs      f1, 0x34(r26)
-	lfs      f0, lbl_80517EAC@sda21(r2)
-	lfs      f28, lbl_80517EB8@sda21(r2)
-	fcmpo    cr0, f1, f0
-	ble      lbl_80124AC8
-	fmr      f28, f1
-
-lbl_80124AC8:
-	li       r28, 0
-	addi     r30, r1, 0x18
-
-lbl_80124AD0:
-	cmpwi    r29, 0
-	li       r5, 0
-	ble      lbl_80124BA8
-	cmpwi    r29, 8
-	addi     r3, r29, -8
-	ble      lbl_80124B70
-	addi     r0, r3, 7
-	addi     r4, r1, 0x18
-	srwi     r0, r0, 3
-	lfs      f0, lbl_80517EAC@sda21(r2)
-	mtctr    r0
-	cmpwi    r3, 0
-	ble      lbl_80124B70
-
-lbl_80124B04:
-	stfs     f0, 8(r4)
-	addi     r5, r5, 8
-	stfs     f0, 4(r4)
-	stfs     f0, 0(r4)
-	stfs     f0, 0x14(r4)
-	stfs     f0, 0x10(r4)
-	stfs     f0, 0xc(r4)
-	stfs     f0, 0x20(r4)
-	stfs     f0, 0x1c(r4)
-	stfs     f0, 0x18(r4)
-	stfs     f0, 0x2c(r4)
-	stfs     f0, 0x28(r4)
-	stfs     f0, 0x24(r4)
-	stfs     f0, 0x38(r4)
-	stfs     f0, 0x34(r4)
-	stfs     f0, 0x30(r4)
-	stfs     f0, 0x44(r4)
-	stfs     f0, 0x40(r4)
-	stfs     f0, 0x3c(r4)
-	stfs     f0, 0x50(r4)
-	stfs     f0, 0x4c(r4)
-	stfs     f0, 0x48(r4)
-	stfs     f0, 0x5c(r4)
-	stfs     f0, 0x58(r4)
-	stfs     f0, 0x54(r4)
-	addi     r4, r4, 0x60
-	bdnz     lbl_80124B04
-
-lbl_80124B70:
-	mulli    r3, r5, 0xc
-	addi     r4, r1, 0x18
-	subf     r0, r5, r29
-	lfs      f0, lbl_80517EAC@sda21(r2)
-	add      r4, r4, r3
-	mtctr    r0
-	cmpw     r5, r29
-	bge      lbl_80124BA8
-
-lbl_80124B90:
-	stfs     f0, 8(r4)
-	addi     r5, r5, 1
-	stfs     f0, 4(r4)
-	stfs     f0, 0(r4)
-	addi     r4, r4, 0xc
-	bdnz     lbl_80124B90
-
-lbl_80124BA8:
-	mr       r23, r31
-	mr       r22, r30
-	li       r21, 0
-	b        lbl_80124CC0
-
-lbl_80124BB8:
-	addi     r20, r21, 1
-	addi     r25, r1, 0x90
-	mulli    r0, r20, 0xc
-	addi     r24, r1, 0x18
-	add      r25, r25, r0
-	add      r24, r24, r0
-	b        lbl_80124CAC
-
-lbl_80124BD4:
-	lfs      f2, 4(r23)
-	lfs      f0, 4(r25)
-	lfs      f1, 0(r23)
-	fsubs    f30, f2, f0
-	lfs      f0, 0(r25)
-	lfs      f2, 8(r23)
-	fsubs    f29, f1, f0
-	lfs      f1, 8(r25)
-	fmuls    f0, f30, f30
-	fsubs    f31, f2, f1
-	fmadds   f0, f29, f29, f0
-	fmadds   f26, f31, f31, f0
-	fmr      f1, f26
-	bl       pikmin2_sqrtf__Ff
-	fmr      f27, f1
-	fcmpo    cr0, f27, f28
-	bge      lbl_80124CA0
-	fmr      f1, f26
-	bl       pikmin2_sqrtf__Ff
-	lfs      f0, lbl_80517EAC@sda21(r2)
-	fcmpo    cr0, f1, f0
-	ble      lbl_80124C40
-	lfs      f0, lbl_80517EBC@sda21(r2)
-	fdivs    f0, f0, f1
-	fmuls    f29, f29, f0
-	fmuls    f30, f30, f0
-	fmuls    f31, f31, f0
-
-lbl_80124C40:
-	fsubs    f1, f28, f27
-	lfs      f2, lbl_80517EC0@sda21(r2)
-	lfs      f0, 0(r22)
-	fmuls    f1, f2, f1
-	fmuls    f29, f29, f1
-	fmuls    f30, f30, f1
-	fmuls    f31, f31, f1
-	fadds    f0, f0, f29
-	stfs     f0, 0(r22)
-	lfs      f0, 4(r22)
-	fadds    f0, f0, f30
-	stfs     f0, 4(r22)
-	lfs      f0, 8(r22)
-	fadds    f0, f0, f31
-	stfs     f0, 8(r22)
-	lfs      f0, 0(r24)
-	fsubs    f0, f0, f29
-	stfs     f0, 0(r24)
-	lfs      f0, 4(r24)
-	fsubs    f0, f0, f30
-	stfs     f0, 4(r24)
-	lfs      f0, 8(r24)
-	fsubs    f0, f0, f31
-	stfs     f0, 8(r24)
-
-lbl_80124CA0:
-	addi     r25, r25, 0xc
-	addi     r24, r24, 0xc
-	addi     r20, r20, 1
-
-lbl_80124CAC:
-	cmpw     r20, r29
-	blt      lbl_80124BD4
-	addi     r23, r23, 0xc
-	addi     r22, r22, 0xc
-	addi     r21, r21, 1
-
-lbl_80124CC0:
-	cmpw     r21, r29
-	blt      lbl_80124BB8
-	cmpwi    r29, 0
-	li       r6, 0
-	ble      lbl_80124EF0
-	cmpwi    r29, 8
-	addi     r3, r29, -8
-	ble      lbl_80124E8C
-	addi     r0, r3, 7
-	mr       r4, r30
-	srwi     r0, r0, 3
-	mr       r5, r31
-	mtctr    r0
-	cmpwi    r3, 0
-	ble      lbl_80124E8C
-
-lbl_80124CFC:
-	lfs      f1, 0(r5)
-	addi     r6, r6, 8
-	lfs      f0, 0(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0(r5)
-	lfs      f1, 4(r5)
-	lfs      f0, 4(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 4(r5)
-	lfs      f1, 8(r5)
-	lfs      f0, 8(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 8(r5)
-	lfs      f1, 0xc(r5)
-	lfs      f0, 0xc(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0xc(r5)
-	lfs      f1, 0x10(r5)
-	lfs      f0, 0x10(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x10(r5)
-	lfs      f1, 0x14(r5)
-	lfs      f0, 0x14(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x14(r5)
-	lfs      f1, 0x18(r5)
-	lfs      f0, 0x18(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x18(r5)
-	lfs      f1, 0x1c(r5)
-	lfs      f0, 0x1c(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x1c(r5)
-	lfs      f1, 0x20(r5)
-	lfs      f0, 0x20(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x20(r5)
-	lfs      f1, 0x24(r5)
-	lfs      f0, 0x24(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x24(r5)
-	lfs      f1, 0x28(r5)
-	lfs      f0, 0x28(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x28(r5)
-	lfs      f1, 0x2c(r5)
-	lfs      f0, 0x2c(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x2c(r5)
-	lfs      f1, 0x30(r5)
-	lfs      f0, 0x30(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x30(r5)
-	lfs      f1, 0x34(r5)
-	lfs      f0, 0x34(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x34(r5)
-	lfs      f1, 0x38(r5)
-	lfs      f0, 0x38(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x38(r5)
-	lfs      f1, 0x3c(r5)
-	lfs      f0, 0x3c(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x3c(r5)
-	lfs      f1, 0x40(r5)
-	lfs      f0, 0x40(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x40(r5)
-	lfs      f1, 0x44(r5)
-	lfs      f0, 0x44(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x44(r5)
-	lfs      f1, 0x48(r5)
-	lfs      f0, 0x48(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x48(r5)
-	lfs      f1, 0x4c(r5)
-	lfs      f0, 0x4c(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x4c(r5)
-	lfs      f1, 0x50(r5)
-	lfs      f0, 0x50(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x50(r5)
-	lfs      f1, 0x54(r5)
-	lfs      f0, 0x54(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x54(r5)
-	lfs      f1, 0x58(r5)
-	lfs      f0, 0x58(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 0x58(r5)
-	lfs      f0, 0x5c(r4)
-	addi     r4, r4, 0x60
-	lfs      f1, 0x5c(r5)
-	fadds    f0, f1, f0
-	stfs     f0, 0x5c(r5)
-	addi     r5, r5, 0x60
-	bdnz     lbl_80124CFC
-
-lbl_80124E8C:
-	mulli    r5, r6, 0xc
-	addi     r3, r1, 0x18
-	addi     r4, r1, 0x90
-	subf     r0, r6, r29
-	add      r3, r3, r5
-	add      r4, r4, r5
-	mtctr    r0
-	cmpw     r6, r29
-	bge      lbl_80124EF0
-
-lbl_80124EB0:
-	lfs      f2, 0(r4)
-	addi     r6, r6, 1
-	lfs      f0, 0(r3)
-	lfs      f1, 4(r3)
-	fadds    f2, f2, f0
-	lfs      f0, 8(r3)
-	addi     r3, r3, 0xc
-	stfs     f2, 0(r4)
-	lfs      f2, 4(r4)
-	fadds    f1, f2, f1
-	stfs     f1, 4(r4)
-	lfs      f1, 8(r4)
-	fadds    f0, f1, f0
-	stfs     f0, 8(r4)
-	addi     r4, r4, 0xc
-	bdnz     lbl_80124EB0
-
-lbl_80124EF0:
-	addi     r28, r28, 1
-	cmpwi    r28, 5
-	blt      lbl_80124AD0
-	lis      r4, __vt__Q24Game15CreatureInitArg@ha
-	lis      r3, __vt__Q24Game6GenArg@ha
-	li       r20, 0
-	addi     r30, r4, __vt__Q24Game15CreatureInitArg@l
-	addi     r28, r3, __vt__Q24Game6GenArg@l
-	b        lbl_80124F7C
-
-lbl_80124F14:
-	lwz      r3, mapMgr__4Game@sda21(r13)
-	cmplwi   r3, 0
-	beq      lbl_80124F38
-	lwz      r12, 4(r3)
-	mr       r4, r31
-	lwz      r12, 0x28(r12)
-	mtctr    r12
-	bctrl
-	stfs     f1, 4(r31)
-
-lbl_80124F38:
-	stw      r30, 8(r1)
-	mr       r3, r26
-	lfs      f2, 0(r31)
-	addi     r4, r1, 8
-	lfs      f1, 4(r31)
-	lfs      f0, 8(r31)
-	stw      r28, 8(r1)
-	stfs     f2, 0xc(r1)
-	stfs     f1, 0x10(r1)
-	stfs     f0, 0x14(r1)
-	lwz      r12, 0xc(r26)
-	lwz      r12, 0x34(r12)
-	mtctr    r12
-	bctrl
-	stw      r27, 0xc4(r3)
-	addi     r31, r31, 0xc
-	addi     r20, r20, 1
-
-lbl_80124F7C:
-	cmpw     r20, r29
-	blt      lbl_80124F14
-	li       r3, 0
-	psq_l    f31, 424(r1), 0, qr0
-	lfd      f31, 0x1a0(r1)
-	psq_l    f30, 408(r1), 0, qr0
-	lfd      f30, 0x190(r1)
-	psq_l    f29, 392(r1), 0, qr0
-	lfd      f29, 0x180(r1)
-	psq_l    f28, 376(r1), 0, qr0
-	lfd      f28, 0x170(r1)
-	psq_l    f27, 360(r1), 0, qr0
-	lfd      f27, 0x160(r1)
-	psq_l    f26, 344(r1), 0, qr0
-	lfd      f26, 0x150(r1)
-	lmw      r20, 0x120(r1)
-	lwz      r0, 0x1b4(r1)
-	mtlr     r0
-	addi     r1, r1, 0x1b0
-	blr
-	*/
+	return nullptr; // placeholder
+	                /*
+	                stwu     r1, -0x1b0(r1)
+	                mflr     r0
+	                stw      r0, 0x1b4(r1)
+	                stfd     f31, 0x1a0(r1)
+	                psq_st   f31, 424(r1), 0, qr0
+	                stfd     f30, 0x190(r1)
+	                psq_st   f30, 408(r1), 0, qr0
+	                stfd     f29, 0x180(r1)
+	                psq_st   f29, 392(r1), 0, qr0
+	                stfd     f28, 0x170(r1)
+	                psq_st   f28, 376(r1), 0, qr0
+	                stfd     f27, 0x160(r1)
+	                psq_st   f27, 360(r1), 0, qr0
+	                stfd     f26, 0x150(r1)
+	                psq_st   f26, 344(r1), 0, qr0
+	                stmw     r20, 0x120(r1)
+	                lfs      f1, 0x94(r4)
+	                mr       r27, r4
+	                lfs      f0, 0xa0(r4)
+	                mr       r26, r3
+	                lfs      f3, 0x98(r27)
+	                lis      r3, "__ct__10Vector3<f>Fv"@ha
+	                fadds    f31, f1, f0
+	                lfs      f2, 0xa4(r27)
+	                lfs      f1, 0x9c(r27)
+	                addi     r4, r3, "__ct__10Vector3<f>Fv"@l
+	                lfs      f0, 0xa8(r27)
+	                fadds    f30, f3, f2
+	                lwz      r7, 0x74(r27)
+	                fadds    f29, f1, f0
+	                lha      r0, 0x2a(r26)
+	                addi     r3, r1, 0x90
+	                li       r5, 0
+	                li       r6, 0xc
+	                subf     r29, r7, r0
+	                li       r7, 0xa
+	                bl       __construct_array
+	                lis      r4, "__ct__10Vector3<f>Fv"@ha
+	                addi     r3, r1, 0x18
+	                addi     r4, r4, "__ct__10Vector3<f>Fv"@l
+	                li       r5, 0
+	                li       r6, 0xc
+	                li       r7, 0xa
+	                bl       __construct_array
+	                addi     r31, r1, 0x90
+	                li       r22, 0
+	                mr       r28, r31
+	                b        lbl_80124AA8
+	            
+	            lbl_801249D8:
+	                lbz      r0, 0x28(r26)
+	                cmplwi   r0, 1
+	                bne      lbl_801249F4
+	                stfs     f31, 0(r28)
+	                stfs     f30, 4(r28)
+	                stfs     f29, 8(r28)
+	                b        lbl_80124AA0
+	            
+	            lbl_801249F4:
+	                bl       rand
+	                xoris    r3, r3, 0x8000
+	                lis      r0, 0x4330
+	                stw      r3, 0x10c(r1)
+	                lfd      f3, lbl_80517EC8@sda21(r2)
+	                stw      r0, 0x108(r1)
+	                lfs      f1, lbl_80517EB0@sda21(r2)
+	                lfd      f2, 0x108(r1)
+	                lfs      f0, lbl_80517EB4@sda21(r2)
+	                fsubs    f2, f2, f3
+	                fdivs    f1, f2, f1
+	                fmuls    f26, f0, f1
+	                bl       rand
+	                xoris    r3, r3, 0x8000
+	                lis      r0, 0x4330
+	                stw      r3, 0x114(r1)
+	                fmr      f1, f26
+	                lfd      f4, lbl_80517EC8@sda21(r2)
+	                stw      r0, 0x110(r1)
+	                lfs      f2, lbl_80517EB0@sda21(r2)
+	                lfd      f3, 0x110(r1)
+	                lfs      f0, 0x2c(r26)
+	                fsubs    f3, f3, f4
+	                fdivs    f2, f3, f2
+	                fmuls    f28, f0, f2
+	                bl       pikmin2_cosf__Ff
+	                fmuls    f27, f28, f1
+	                fmr      f1, f26
+	                bl       pikmin2_sinf__Ff
+	                fmuls    f1, f28, f1
+	                lfs      f0, lbl_80517EAC@sda21(r2)
+	                stfs     f1, 0(r28)
+	                stfs     f0, 4(r28)
+	                stfs     f27, 8(r28)
+	                lfs      f0, 0(r28)
+	                lfs      f1, 4(r28)
+	                fadds    f0, f0, f31
+	                lfs      f2, 8(r28)
+	                fadds    f1, f1, f30
+	                fadds    f2, f2, f29
+	                stfs     f0, 0(r28)
+	                stfs     f1, 4(r28)
+	                stfs     f2, 8(r28)
+	            
+	            lbl_80124AA0:
+	                addi     r28, r28, 0xc
+	                addi     r22, r22, 1
+	            
+	            lbl_80124AA8:
+	                cmpw     r22, r29
+	                blt      lbl_801249D8
+	                lfs      f1, 0x34(r26)
+	                lfs      f0, lbl_80517EAC@sda21(r2)
+	                lfs      f28, lbl_80517EB8@sda21(r2)
+	                fcmpo    cr0, f1, f0
+	                ble      lbl_80124AC8
+	                fmr      f28, f1
+	            
+	            lbl_80124AC8:
+	                li       r28, 0
+	                addi     r30, r1, 0x18
+	            
+	            lbl_80124AD0:
+	                cmpwi    r29, 0
+	                li       r5, 0
+	                ble      lbl_80124BA8
+	                cmpwi    r29, 8
+	                addi     r3, r29, -8
+	                ble      lbl_80124B70
+	                addi     r0, r3, 7
+	                addi     r4, r1, 0x18
+	                srwi     r0, r0, 3
+	                lfs      f0, lbl_80517EAC@sda21(r2)
+	                mtctr    r0
+	                cmpwi    r3, 0
+	                ble      lbl_80124B70
+	            
+	            lbl_80124B04:
+	                stfs     f0, 8(r4)
+	                addi     r5, r5, 8
+	                stfs     f0, 4(r4)
+	                stfs     f0, 0(r4)
+	                stfs     f0, 0x14(r4)
+	                stfs     f0, 0x10(r4)
+	                stfs     f0, 0xc(r4)
+	                stfs     f0, 0x20(r4)
+	                stfs     f0, 0x1c(r4)
+	                stfs     f0, 0x18(r4)
+	                stfs     f0, 0x2c(r4)
+	                stfs     f0, 0x28(r4)
+	                stfs     f0, 0x24(r4)
+	                stfs     f0, 0x38(r4)
+	                stfs     f0, 0x34(r4)
+	                stfs     f0, 0x30(r4)
+	                stfs     f0, 0x44(r4)
+	                stfs     f0, 0x40(r4)
+	                stfs     f0, 0x3c(r4)
+	                stfs     f0, 0x50(r4)
+	                stfs     f0, 0x4c(r4)
+	                stfs     f0, 0x48(r4)
+	                stfs     f0, 0x5c(r4)
+	                stfs     f0, 0x58(r4)
+	                stfs     f0, 0x54(r4)
+	                addi     r4, r4, 0x60
+	                bdnz     lbl_80124B04
+	            
+	            lbl_80124B70:
+	                mulli    r3, r5, 0xc
+	                addi     r4, r1, 0x18
+	                subf     r0, r5, r29
+	                lfs      f0, lbl_80517EAC@sda21(r2)
+	                add      r4, r4, r3
+	                mtctr    r0
+	                cmpw     r5, r29
+	                bge      lbl_80124BA8
+	            
+	            lbl_80124B90:
+	                stfs     f0, 8(r4)
+	                addi     r5, r5, 1
+	                stfs     f0, 4(r4)
+	                stfs     f0, 0(r4)
+	                addi     r4, r4, 0xc
+	                bdnz     lbl_80124B90
+	            
+	            lbl_80124BA8:
+	                mr       r23, r31
+	                mr       r22, r30
+	                li       r21, 0
+	                b        lbl_80124CC0
+	            
+	            lbl_80124BB8:
+	                addi     r20, r21, 1
+	                addi     r25, r1, 0x90
+	                mulli    r0, r20, 0xc
+	                addi     r24, r1, 0x18
+	                add      r25, r25, r0
+	                add      r24, r24, r0
+	                b        lbl_80124CAC
+	            
+	            lbl_80124BD4:
+	                lfs      f2, 4(r23)
+	                lfs      f0, 4(r25)
+	                lfs      f1, 0(r23)
+	                fsubs    f30, f2, f0
+	                lfs      f0, 0(r25)
+	                lfs      f2, 8(r23)
+	                fsubs    f29, f1, f0
+	                lfs      f1, 8(r25)
+	                fmuls    f0, f30, f30
+	                fsubs    f31, f2, f1
+	                fmadds   f0, f29, f29, f0
+	                fmadds   f26, f31, f31, f0
+	                fmr      f1, f26
+	                bl       pikmin2_sqrtf__Ff
+	                fmr      f27, f1
+	                fcmpo    cr0, f27, f28
+	                bge      lbl_80124CA0
+	                fmr      f1, f26
+	                bl       pikmin2_sqrtf__Ff
+	                lfs      f0, lbl_80517EAC@sda21(r2)
+	                fcmpo    cr0, f1, f0
+	                ble      lbl_80124C40
+	                lfs      f0, lbl_80517EBC@sda21(r2)
+	                fdivs    f0, f0, f1
+	                fmuls    f29, f29, f0
+	                fmuls    f30, f30, f0
+	                fmuls    f31, f31, f0
+	            
+	            lbl_80124C40:
+	                fsubs    f1, f28, f27
+	                lfs      f2, lbl_80517EC0@sda21(r2)
+	                lfs      f0, 0(r22)
+	                fmuls    f1, f2, f1
+	                fmuls    f29, f29, f1
+	                fmuls    f30, f30, f1
+	                fmuls    f31, f31, f1
+	                fadds    f0, f0, f29
+	                stfs     f0, 0(r22)
+	                lfs      f0, 4(r22)
+	                fadds    f0, f0, f30
+	                stfs     f0, 4(r22)
+	                lfs      f0, 8(r22)
+	                fadds    f0, f0, f31
+	                stfs     f0, 8(r22)
+	                lfs      f0, 0(r24)
+	                fsubs    f0, f0, f29
+	                stfs     f0, 0(r24)
+	                lfs      f0, 4(r24)
+	                fsubs    f0, f0, f30
+	                stfs     f0, 4(r24)
+	                lfs      f0, 8(r24)
+	                fsubs    f0, f0, f31
+	                stfs     f0, 8(r24)
+	            
+	            lbl_80124CA0:
+	                addi     r25, r25, 0xc
+	                addi     r24, r24, 0xc
+	                addi     r20, r20, 1
+	            
+	            lbl_80124CAC:
+	                cmpw     r20, r29
+	                blt      lbl_80124BD4
+	                addi     r23, r23, 0xc
+	                addi     r22, r22, 0xc
+	                addi     r21, r21, 1
+	            
+	            lbl_80124CC0:
+	                cmpw     r21, r29
+	                blt      lbl_80124BB8
+	                cmpwi    r29, 0
+	                li       r6, 0
+	                ble      lbl_80124EF0
+	                cmpwi    r29, 8
+	                addi     r3, r29, -8
+	                ble      lbl_80124E8C
+	                addi     r0, r3, 7
+	                mr       r4, r30
+	                srwi     r0, r0, 3
+	                mr       r5, r31
+	                mtctr    r0
+	                cmpwi    r3, 0
+	                ble      lbl_80124E8C
+	            
+	            lbl_80124CFC:
+	                lfs      f1, 0(r5)
+	                addi     r6, r6, 8
+	                lfs      f0, 0(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0(r5)
+	                lfs      f1, 4(r5)
+	                lfs      f0, 4(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 4(r5)
+	                lfs      f1, 8(r5)
+	                lfs      f0, 8(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 8(r5)
+	                lfs      f1, 0xc(r5)
+	                lfs      f0, 0xc(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0xc(r5)
+	                lfs      f1, 0x10(r5)
+	                lfs      f0, 0x10(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x10(r5)
+	                lfs      f1, 0x14(r5)
+	                lfs      f0, 0x14(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x14(r5)
+	                lfs      f1, 0x18(r5)
+	                lfs      f0, 0x18(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x18(r5)
+	                lfs      f1, 0x1c(r5)
+	                lfs      f0, 0x1c(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x1c(r5)
+	                lfs      f1, 0x20(r5)
+	                lfs      f0, 0x20(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x20(r5)
+	                lfs      f1, 0x24(r5)
+	                lfs      f0, 0x24(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x24(r5)
+	                lfs      f1, 0x28(r5)
+	                lfs      f0, 0x28(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x28(r5)
+	                lfs      f1, 0x2c(r5)
+	                lfs      f0, 0x2c(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x2c(r5)
+	                lfs      f1, 0x30(r5)
+	                lfs      f0, 0x30(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x30(r5)
+	                lfs      f1, 0x34(r5)
+	                lfs      f0, 0x34(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x34(r5)
+	                lfs      f1, 0x38(r5)
+	                lfs      f0, 0x38(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x38(r5)
+	                lfs      f1, 0x3c(r5)
+	                lfs      f0, 0x3c(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x3c(r5)
+	                lfs      f1, 0x40(r5)
+	                lfs      f0, 0x40(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x40(r5)
+	                lfs      f1, 0x44(r5)
+	                lfs      f0, 0x44(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x44(r5)
+	                lfs      f1, 0x48(r5)
+	                lfs      f0, 0x48(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x48(r5)
+	                lfs      f1, 0x4c(r5)
+	                lfs      f0, 0x4c(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x4c(r5)
+	                lfs      f1, 0x50(r5)
+	                lfs      f0, 0x50(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x50(r5)
+	                lfs      f1, 0x54(r5)
+	                lfs      f0, 0x54(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x54(r5)
+	                lfs      f1, 0x58(r5)
+	                lfs      f0, 0x58(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x58(r5)
+	                lfs      f0, 0x5c(r4)
+	                addi     r4, r4, 0x60
+	                lfs      f1, 0x5c(r5)
+	                fadds    f0, f1, f0
+	                stfs     f0, 0x5c(r5)
+	                addi     r5, r5, 0x60
+	                bdnz     lbl_80124CFC
+	            
+	            lbl_80124E8C:
+	                mulli    r5, r6, 0xc
+	                addi     r3, r1, 0x18
+	                addi     r4, r1, 0x90
+	                subf     r0, r6, r29
+	                add      r3, r3, r5
+	                add      r4, r4, r5
+	                mtctr    r0
+	                cmpw     r6, r29
+	                bge      lbl_80124EF0
+	            
+	            lbl_80124EB0:
+	                lfs      f2, 0(r4)
+	                addi     r6, r6, 1
+	                lfs      f0, 0(r3)
+	                lfs      f1, 4(r3)
+	                fadds    f2, f2, f0
+	                lfs      f0, 8(r3)
+	                addi     r3, r3, 0xc
+	                stfs     f2, 0(r4)
+	                lfs      f2, 4(r4)
+	                fadds    f1, f2, f1
+	                stfs     f1, 4(r4)
+	                lfs      f1, 8(r4)
+	                fadds    f0, f1, f0
+	                stfs     f0, 8(r4)
+	                addi     r4, r4, 0xc
+	                bdnz     lbl_80124EB0
+	            
+	            lbl_80124EF0:
+	                addi     r28, r28, 1
+	                cmpwi    r28, 5
+	                blt      lbl_80124AD0
+	                lis      r4, __vt__Q24Game15CreatureInitArg@ha
+	                lis      r3, __vt__Q24Game6GenArg@ha
+	                li       r20, 0
+	                addi     r30, r4, __vt__Q24Game15CreatureInitArg@l
+	                addi     r28, r3, __vt__Q24Game6GenArg@l
+	                b        lbl_80124F7C
+	            
+	            lbl_80124F14:
+	                lwz      r3, mapMgr__4Game@sda21(r13)
+	                cmplwi   r3, 0
+	                beq      lbl_80124F38
+	                lwz      r12, 4(r3)
+	                mr       r4, r31
+	                lwz      r12, 0x28(r12)
+	                mtctr    r12
+	                bctrl
+	                stfs     f1, 4(r31)
+	            
+	            lbl_80124F38:
+	                stw      r30, 8(r1)
+	                mr       r3, r26
+	                lfs      f2, 0(r31)
+	                addi     r4, r1, 8
+	                lfs      f1, 4(r31)
+	                lfs      f0, 8(r31)
+	                stw      r28, 8(r1)
+	                stfs     f2, 0xc(r1)
+	                stfs     f1, 0x10(r1)
+	                stfs     f0, 0x14(r1)
+	                lwz      r12, 0xc(r26)
+	                lwz      r12, 0x34(r12)
+	                mtctr    r12
+	                bctrl
+	                stw      r27, 0xc4(r3)
+	                addi     r31, r31, 0xc
+	                addi     r20, r20, 1
+	            
+	            lbl_80124F7C:
+	                cmpw     r20, r29
+	                blt      lbl_80124F14
+	                li       r3, 0
+	                psq_l    f31, 424(r1), 0, qr0
+	                lfd      f31, 0x1a0(r1)
+	                psq_l    f30, 408(r1), 0, qr0
+	                lfd      f30, 0x190(r1)
+	                psq_l    f29, 392(r1), 0, qr0
+	                lfd      f29, 0x180(r1)
+	                psq_l    f28, 376(r1), 0, qr0
+	                lfd      f28, 0x170(r1)
+	                psq_l    f27, 360(r1), 0, qr0
+	                lfd      f27, 0x160(r1)
+	                psq_l    f26, 344(r1), 0, qr0
+	                lfd      f26, 0x150(r1)
+	                lmw      r20, 0x120(r1)
+	                lwz      r0, 0x1b4(r1)
+	                mtlr     r0
+	                addi     r1, r1, 0x1b0
+	                blr
+	                */
 }
 
 /*
@@ -1262,68 +566,69 @@ lbl_80124F7C:
  * Address:	80124FCC
  * Size:	0000E0
  */
-void GenObjectEnemy::birth(Game::GenArg*)
+Creature* GenObjectEnemy::birth(Game::GenArg*)
 {
-	/*
-	stwu     r1, -0x50(r1)
-	mflr     r0
-	stw      r0, 0x54(r1)
-	stw      r31, 0x4c(r1)
-	mr       r31, r4
-	stw      r30, 0x48(r1)
-	mr       r30, r3
-	lwz      r12, 0xc(r3)
-	lwz      r12, 0x24(r12)
-	mtctr    r12
-	bctrl
-	addi     r3, r1, 8
-	bl       __ct__Q24Game13EnemyBirthArgFv
-	lfs      f0, 4(r31)
-	addi     r5, r1, 8
-	lfs      f1, lbl_80517ED4@sda21(r2)
-	stfs     f0, 8(r1)
-	lfs      f2, lbl_80517ED0@sda21(r2)
-	lfs      f0, 8(r31)
-	lwz      r3, generalEnemyMgr__4Game@sda21(r13)
-	stfs     f0, 0xc(r1)
-	lfs      f0, 0xc(r31)
-	stfs     f0, 0x10(r1)
-	lfs      f0, 0x30(r30)
-	fmuls    f0, f1, f0
-	fmuls    f0, f2, f0
-	stfs     f0, 0x14(r1)
-	lbz      r0, 0x29(r30)
-	stb      r0, 0x18(r1)
-	lwz      r0, 0x48(r30)
-	stw      r0, 0x1c(r1)
-	lha      r0, 0x38(r30)
-	sth      r0, 0x20(r1)
-	lbz      r0, 0x3c(r30)
-	stb      r0, 0x24(r1)
-	lbz      r0, 0x3d(r30)
-	stb      r0, 0x25(r1)
-	lbz      r0, 0x3e(r30)
-	stb      r0, 0x26(r1)
-	lbz      r0, 0x3f(r30)
-	stb      r0, 0x27(r1)
-	lfs      f0, 0x40(r30)
-	stfs     f0, 0x28(r1)
-	lwz      r4, 0x24(r30)
-	bl       birth__Q24Game15GeneralEnemyMgrFiRQ24Game13EnemyBirthArg
-	or.      r31, r3, r3
-	beq      lbl_80125090
-	li       r4, 0
-	bl       init__Q24Game8CreatureFPQ24Game15CreatureInitArg
-
-lbl_80125090:
-	lwz      r0, 0x54(r1)
-	mr       r3, r31
-	lwz      r31, 0x4c(r1)
-	lwz      r30, 0x48(r1)
-	mtlr     r0
-	addi     r1, r1, 0x50
-	blr
-	*/
+	return nullptr; // placeholder
+	                /*
+	                stwu     r1, -0x50(r1)
+	                mflr     r0
+	                stw      r0, 0x54(r1)
+	                stw      r31, 0x4c(r1)
+	                mr       r31, r4
+	                stw      r30, 0x48(r1)
+	                mr       r30, r3
+	                lwz      r12, 0xc(r3)
+	                lwz      r12, 0x24(r12)
+	                mtctr    r12
+	                bctrl
+	                addi     r3, r1, 8
+	                bl       __ct__Q24Game13EnemyBirthArgFv
+	                lfs      f0, 4(r31)
+	                addi     r5, r1, 8
+	                lfs      f1, lbl_80517ED4@sda21(r2)
+	                stfs     f0, 8(r1)
+	                lfs      f2, lbl_80517ED0@sda21(r2)
+	                lfs      f0, 8(r31)
+	                lwz      r3, generalEnemyMgr__4Game@sda21(r13)
+	                stfs     f0, 0xc(r1)
+	                lfs      f0, 0xc(r31)
+	                stfs     f0, 0x10(r1)
+	                lfs      f0, 0x30(r30)
+	                fmuls    f0, f1, f0
+	                fmuls    f0, f2, f0
+	                stfs     f0, 0x14(r1)
+	                lbz      r0, 0x29(r30)
+	                stb      r0, 0x18(r1)
+	                lwz      r0, 0x48(r30)
+	                stw      r0, 0x1c(r1)
+	                lha      r0, 0x38(r30)
+	                sth      r0, 0x20(r1)
+	                lbz      r0, 0x3c(r30)
+	                stb      r0, 0x24(r1)
+	                lbz      r0, 0x3d(r30)
+	                stb      r0, 0x25(r1)
+	                lbz      r0, 0x3e(r30)
+	                stb      r0, 0x26(r1)
+	                lbz      r0, 0x3f(r30)
+	                stb      r0, 0x27(r1)
+	                lfs      f0, 0x40(r30)
+	                stfs     f0, 0x28(r1)
+	                lwz      r4, 0x24(r30)
+	                bl       birth__Q24Game15GeneralEnemyMgrFiRQ24Game13EnemyBirthArg
+	                or.      r31, r3, r3
+	                beq      lbl_80125090
+	                li       r4, 0
+	                bl       init__Q24Game8CreatureFPQ24Game15CreatureInitArg
+	            
+	            lbl_80125090:
+	                lwz      r0, 0x54(r1)
+	                mr       r3, r31
+	                lwz      r31, 0x4c(r1)
+	                lwz      r30, 0x48(r1)
+	                mtlr     r0
+	                addi     r1, r1, 0x50
+	                blr
+	                */
 }
 
 /*
@@ -1485,8 +790,9 @@ void EnemyGeneratorBase::doWrite(Stream&) { }
  * Address:	801252C8
  * Size:	00000C
  */
-void EnemyGeneratorBase::getLatestVersion()
+u32 EnemyGeneratorBase::getLatestVersion()
 {
+	return '????';
 	/*
 	lis      r3, 0x3F3F3F3F@ha
 	addi     r3, r3, 0x3F3F3F3F@l
@@ -3389,60 +2695,31 @@ lbl_80126748:
  * --INFO--
  * Address:	80126764
  * Size:	00006C
+ * Weak function. Matched.
+ * EnemyGeneratorBase::EnemyGeneratorBase(char*)
  */
-EnemyGeneratorBase::EnemyGeneratorBase(char*)
-{
-	/*
-	stwu     r1, -0x10(r1)
-	mflr     r0
-	lis      r5, __vt__5CNode@ha
-	li       r6, 0
-	stw      r0, 0x14(r1)
-	addi     r0, r5, __vt__5CNode@l
-	lis      r5, 0x3F3F3F3F@ha
-	stw      r31, 0xc(r1)
-	mr       r31, r3
-	lis      r3, __vt__Q24Game18EnemyGeneratorBase@ha
-	stw      r0, 0(r31)
-	addi     r0, r3, __vt__Q24Game18EnemyGeneratorBase@l
-	addi     r3, r31, 0x18
-	stw      r6, 0x10(r31)
-	stw      r6, 0xc(r31)
-	stw      r6, 8(r31)
-	stw      r6, 4(r31)
-	stw      r4, 0x14(r31)
-	addi     r4, r5, 0x3F3F3F3F@l
-	stw      r0, 0(r31)
-	bl       __ct__4ID32FUl
-	lwz      r0, 0x14(r1)
-	mr       r3, r31
-	lwz      r31, 0xc(r1)
-	mtlr     r0
-	addi     r1, r1, 0x10
-	blr
-	*/
-}
 
 /*
  * --INFO--
  * Address:	801267D0
  * Size:	00002C
  */
-void GenObjectEnemy::getShape()
+J3DModelData* GenObjectEnemy::getShape()
 {
-	/*
-	stwu     r1, -0x10(r1)
-	mflr     r0
-	mr       r4, r3
-	stw      r0, 0x14(r1)
-	lwz      r3, generalEnemyMgr__4Game@sda21(r13)
-	lwz      r4, 0x24(r4)
-	bl       getJ3DModelData__Q24Game15GeneralEnemyMgrFi
-	lwz      r0, 0x14(r1)
-	mtlr     r0
-	addi     r1, r1, 0x10
-	blr
-	*/
+	return nullptr; // placeholder
+	                /*
+	                stwu     r1, -0x10(r1)
+	                mflr     r0
+	                mr       r4, r3
+	                stw      r0, 0x14(r1)
+	                lwz      r3, generalEnemyMgr__4Game@sda21(r13)
+	                lwz      r4, 0x24(r4)
+	                bl       getJ3DModelData__Q24Game15GeneralEnemyMgrFi
+	                lwz      r0, 0x14(r1)
+	                mtlr     r0
+	                addi     r1, r1, 0x10
+	                blr
+	                */
 }
 
 /*
@@ -3699,39 +2976,9 @@ void EnemyGeneratorBase::draw(Graphics&, Game::Generator*) { }
  * --INFO--
  * Address:	80126B5C
  * Size:	000060
+ * EnemyGeneratorBase::~EnemyGeneratorBase()
+ * Weak function.
  */
-EnemyGeneratorBase::~EnemyGeneratorBase()
-{
-	/*
-	stwu     r1, -0x10(r1)
-	mflr     r0
-	stw      r0, 0x14(r1)
-	stw      r31, 0xc(r1)
-	mr       r31, r4
-	stw      r30, 8(r1)
-	or.      r30, r3, r3
-	beq      lbl_80126BA0
-	lis      r5, __vt__Q24Game18EnemyGeneratorBase@ha
-	li       r4, 0
-	addi     r0, r5, __vt__Q24Game18EnemyGeneratorBase@l
-	stw      r0, 0(r30)
-	bl       __dt__5CNodeFv
-	extsh.   r0, r31
-	ble      lbl_80126BA0
-	mr       r3, r30
-	bl       __dl__FPv
-
-lbl_80126BA0:
-	lwz      r0, 0x14(r1)
-	mr       r3, r30
-	lwz      r31, 0xc(r1)
-	lwz      r30, 8(r1)
-	mtlr     r0
-	addi     r1, r1, 0x10
-	blr
-	*/
-}
-
 /*
  * --INFO--
  * Address:	80126BBC
@@ -3744,12 +2991,13 @@ u32 EnemyGeneratorBase::getInitialParam() { return 0x0; }
  * Address:	80126BC4
  * Size:	000008
  */
-void GenArg::getName()
+const char* GenArg::getName()
 {
-	/*
-	addi     r3, r2, lbl_80517F48@sda21
-	blr
-	*/
+	return nullptr; // placeholder
+	                /*
+	                addi     r3, r2, lbl_80517F48@sda21
+	                blr
+	                */
 }
 
 /*

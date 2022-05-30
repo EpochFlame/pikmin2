@@ -5,31 +5,26 @@ lbl_constructor:
 
 .section .rodata  # 0x804732E0 - 0x8049E220
 .balign 8
-.global lbl_80492520
 lbl_80492520:
 	.4byte 0x00000000
 	.4byte 0x00000000
 	.4byte 0x00000000
-.global lbl_8049252C
 lbl_8049252C:
-	.4byte 0x7A756B61
-	.4byte 0x6E32442E
-	.4byte 0x63707000
-.global lbl_80492538
+	.asciz "zukan2D.cpp"
+.balign 4
 lbl_80492538:
 	.asciz "P2Assert"
-	.skip 3
-	.4byte 0x6E657769
-	.4byte 0x636F6E2E
-	.4byte 0x626C6F00
-	.4byte 0x6C5F6274
-	.4byte 0x6E2E6274
-	.4byte 0x69000000
-.global lbl_8049255C
+.balign 4
+lbl_80492544:
+	.asciz "newicon.blo"
+.balign 4
+lbl_80492550:
+	.asciz "l_btn.bti"
+.balign 4
 lbl_8049255C:
-	.4byte 0x6D725574
-	.4byte 0x696C2E68
-	.4byte 0x00000000
+	.asciz "mrUtil.h"
+.balign 8
+lbl_80492568: # table of 10 Tmenu00-Tmenu09 char[8] (7 and 6 are swapped)
 	.4byte 0x00546D65
 	.4byte 0x6E753030
 	.4byte 0x00546D65
@@ -50,18 +45,14 @@ lbl_8049255C:
 	.4byte 0x6E753038
 	.4byte 0x00546D65
 	.4byte 0x6E753039
-	.4byte 0x506E3030
-	.4byte 0x5F305F31
-	.4byte 0x506E3030
-	.4byte 0x5F315F31
-	.4byte 0x506E3030
-	.4byte 0x5F325F31
-	.4byte 0x506E3030
-	.4byte 0x5F305F32
-	.4byte 0x506E3030
-	.4byte 0x5F315F32
-	.4byte 0x506E3030
-	.4byte 0x5F325F32
+.balign 8
+lbl_804925B8: # table of 120 ID64 (char[8]) elements
+	.ascii "Pn00_0_1"
+	.ascii "Pn00_1_1"
+	.ascii "Pn00_2_1"
+	.ascii "Pn00_0_2"
+	.ascii "Pn00_1_2"
+	.ascii "Pn00_2_2"
 	.4byte 0x50696D30
 	.4byte 0x305F3030
 	.4byte 0x50696D30
@@ -294,7 +285,6 @@ lbl_8049255C:
 	.4byte 0x34385F67
 	.4byte 0x72612E62
 	.4byte 0x74690000
-.global lbl_80492988
 lbl_80492988:
 	.4byte 0x74696D67
 	.4byte 0x2F666C6F
@@ -302,7 +292,6 @@ lbl_80492988:
 	.4byte 0x69636F6E
 	.4byte 0x2E627469
 	.4byte 0x00000000
-.global lbl_804929A0
 lbl_804929A0:
 	.4byte 0x656E656D
 	.4byte 0x795A756B
@@ -411,7 +400,6 @@ lbl_804929A0:
 	.4byte 0x69727573
 	.4byte 0x68692E62
 	.4byte 0x6C6F0000
-.global lbl_80492B4C
 lbl_80492B4C:
 	.4byte 0x70726963
 	.4byte 0x65202825
@@ -782,11 +770,9 @@ lbl_80492B4C:
 	.4byte 0x315F3031
 	.4byte 0x506D6531
 	.4byte 0x315F3032
-.global lbl_80493110
 lbl_80493110:
 	.asciz "endWindow"
-	.skip 2
-.global lbl_8049311C
+.balign 4
 lbl_8049311C:
 	.4byte 0x6974656D
 	.4byte 0x5A756B61
@@ -888,50 +874,48 @@ lbl_8049311C:
 	.4byte 0x25642920
 	.4byte 0x3D202564
 	.4byte 0x0A000000
-.global lbl_804932AC
 lbl_804932AC:
 	.asciz "res_itemZukan.szs"
-	.skip 2
+.balign 4
+lbl_804932C0:
 	.asciz "screenObj.h"
-.global lbl_804932CC
+.balign 4
 lbl_804932CC:
 	.asciz "res_enemyZukan.szs"
-	.skip 1
 
 .section .data, "wa"  # 0x8049E220 - 0x804EFC20
 .balign 8
-.global lbl_804E3928
-lbl_804E3928:
-	.4byte 0x00000000
-	.4byte 0x00000000
-	.4byte 0x00000000
+govNAN___Q24Game5P2JST:
+	.float 0.0
+	.float 0.0
+	.float 0.0
 .global mCategoryArray__Q28Morimura10TItemZukan
-mCategoryArray__Q28Morimura10TItemZukan:
-	.4byte 0x00000007
-	.4byte 0x00000010
-	.4byte 0x00000016
-	.4byte 0x0000001B
-	.4byte 0x0000002A
-	.4byte 0x00000033
-	.4byte 0x00000039
-	.4byte 0x0000003F
-	.4byte 0x00000047
-	.4byte 0x0000004F
-	.4byte 0x00000056
-	.4byte 0x0000005E
-	.4byte 0x00000067
-	.4byte 0x0000006D
-	.4byte 0x00000078
-	.4byte 0x0000007E
-	.4byte 0x00000092
-	.4byte 0x0000009C
-	.4byte 0x000000A0
-	.4byte 0x000000A6
-	.4byte 0x000000A8
-	.4byte 0x000000B0
-	.4byte 0x000000B7
-	.4byte 0x000000C4
-	.4byte 0x000000C9
+mCategoryArray__Q28Morimura10TItemZukan: # treasure id of final category member
+	.4byte 7	# Succulent Series
+	.4byte 16	# Nature's Candy Series
+	.4byte 22	# Xenoflora Series
+	.4byte 27	# Gourmet Series
+	.4byte 42	# Sweet Tooth Series
+	.4byte 51	# Paleontology Series
+	.4byte 57	# Ancient Secrets Series
+	.4byte 63	# Cook's Arsenal Series
+	.4byte 71	# Tortured Artist Series
+	.4byte 79	# Modern Amenities Series
+	.4byte 86	# Frigid Series
+	.4byte 94	# Hyper-technology Series
+	.4byte 103	# Industrial Set
+	.4byte 109	# Husband's Tears Series
+	.4byte 120	# Space Love Series
+	.4byte 126	# Crystallized Emotion Series
+	.4byte 146	# Dream Series
+	.4byte 156	# Blast from the Past Series
+	.4byte 160	# Mystical Energy Series
+	.4byte 166	# Massive Receptacle Series
+	.4byte 168	# Survival Series
+	.4byte 176	# Ancient Ad Series
+	.4byte 183	# Odd Logo Series
+	.4byte 196	# Explorer's Friend Series
+	.4byte 201	# Titan Dweevil Series
 .global eIDInfo__8Morimura
 eIDInfo__8Morimura:
 	.4byte 0x00000000
@@ -1458,7 +1442,7 @@ mRequestTimerMax__Q28Morimura10TZukanBase:
 .global mIconMove__Q28Morimura10TZukanBase
 mIconMove__Q28Morimura10TZukanBase:
 	.byte 0x1
-	.byte 0x0
+.balign 4
 .global mLineSpace__Q28Morimura10TZukanBase
 mLineSpace__Q28Morimura10TZukanBase:
 	.float 48.0
@@ -1485,15 +1469,13 @@ mCategoryAlphaRate__Q28Morimura10TZukanBase:
 	.float 0.6
 .global mDrawLineType__Q28Morimura10TZukanBase
 mDrawLineType__Q28Morimura10TZukanBase:
-	.4byte 0x02000000
+	.byte 0x2
 
 .section .sbss # 0x80514D80 - 0x80516360
 .balign 8
-.global lbl_80515F70
-lbl_80515F70:
+gu32NAN___Q24Game5P2JST:
 	.skip 0x4
-.global lbl_80515F74
-lbl_80515F74:
+gfNAN___Q24Game5P2JST:
 	.skip 0x4
 .global mShowAllObjects__Q28Morimura10TZukanBase
 mShowAllObjects__Q28Morimura10TZukanBase:
@@ -1546,179 +1528,122 @@ mDebugHeap__Q28Morimura10TZukanBase:
 
 .section .sdata2, "a"     # 0x80516360 - 0x80520E40
 .balign 8
-.global lbl_8051EB20
 lbl_8051EB20:
 	.4byte 0x00000000
-.global lbl_8051EB24
 lbl_8051EB24:
 	.float 1.0
-.global lbl_8051EB28
 lbl_8051EB28:
 	.4byte 0x3CA3D70A
-.global lbl_8051EB2C
 lbl_8051EB2C:
 	.float 0.5
-.global lbl_8051EB30
 lbl_8051EB30:
 	.float 0.25
-.global lbl_8051EB34
 lbl_8051EB34:
 	.4byte 0xC3960000
-.global lbl_8051EB38
 lbl_8051EB38:
 	.float 0.1
-.global lbl_8051EB3C
 lbl_8051EB3C:
 	.float 0.7
-.global lbl_8051EB40
 lbl_8051EB40:
 	.float 0.3
-.global lbl_8051EB44
 lbl_8051EB44:
 	.4byte 0x40A00000
-.global lbl_8051EB48
 lbl_8051EB48:
 	.4byte 0x40200000
-.global lbl_8051EB4C
 lbl_8051EB4C:
-	.4byte 0x40000000
-.global lbl_8051EB50
+	.float 2.0
 lbl_8051EB50:
 	.4byte 0x3F99999A
-.global lbl_8051EB54
 lbl_8051EB54:
 	.4byte 0x3E4CCCCD
-.global lbl_8051EB58
 lbl_8051EB58:
 	.4byte 0x41C80000
-.global lbl_8051EB5C
 lbl_8051EB5C:
 	.4byte 0x3F666666
-.global lbl_8051EB60
 lbl_8051EB60:
 	.4byte 0x40400000
-.global lbl_8051EB64
 lbl_8051EB64:
-	.4byte 0xBF000000
-.global lbl_8051EB68
+	.float -0.5
 lbl_8051EB68:
-	.4byte 0xBF800000
-.global lbl_8051EB6C
+	.float -1.0
 lbl_8051EB6C:
 	.4byte 0x3EB33333
-.global lbl_8051EB70
 lbl_8051EB70:
 	.4byte 0x437F0000
-.global lbl_8051EB74
 lbl_8051EB74:
 	.4byte 0x3F19999A
-.global lbl_8051EB78
 lbl_8051EB78:
 	.float 0.05
-	.4byte 0x00000000
-.global lbl_8051EB80
+.balign 8
 lbl_8051EB80:
 	.4byte 0x43300000
 	.4byte 0x80000000
-.global lbl_8051EB88
 lbl_8051EB88:
 	.4byte 0x42F00000
 	.4byte 0x00000000
-.global lbl_8051EB90
 lbl_8051EB90:
 	.4byte 0x43300000
 	.4byte 0x00000000
-.global lbl_8051EB98
 lbl_8051EB98:
 	.4byte 0x41200000
-.global lbl_8051EB9C
 lbl_8051EB9C:
 	.4byte 0x41A00000
-.global lbl_8051EBA0
 lbl_8051EBA0:
 	.4byte 0x40C90FDB
-.global lbl_8051EBA4
 lbl_8051EBA4:
 	.4byte 0x3F59999A
-.global lbl_8051EBA8
 lbl_8051EBA8:
 	.4byte 0xC3A2F983
-.global lbl_8051EBAC
 lbl_8051EBAC:
 	.4byte 0x43A2F983
-.global lbl_8051EBB0
 lbl_8051EBB0:
 	.4byte 0x42780000
-.global lbl_8051EBB4
 lbl_8051EBB4:
 	.4byte 0x47000000
-.global lbl_8051EBB8
 lbl_8051EBB8:
 	.4byte 0x3F8CCCCD
-.global lbl_8051EBBC
 lbl_8051EBBC:
 	.4byte 0x3F7D70A4
-.global lbl_8051EBC0
 lbl_8051EBC0:
 	.4byte 0x3FC00000
-.global lbl_8051EBC4
 lbl_8051EBC4:
 	.4byte 0x42480000
-.global lbl_8051EBC8
 lbl_8051EBC8:
 	.4byte 0x447A0000
-.global lbl_8051EBCC
 lbl_8051EBCC:
 	.4byte 0x47C35000
-.global lbl_8051EBD0
 lbl_8051EBD0:
 	.4byte 0x41F00000
-.global lbl_8051EBD4
 lbl_8051EBD4:
 	.4byte 0x3FA00000
-.global lbl_8051EBD8
 lbl_8051EBD8:
 	.4byte 0x43160000
-.global lbl_8051EBDC
 lbl_8051EBDC:
 	.4byte 0x41000000
-.global lbl_8051EBE0
 lbl_8051EBE0:
 	.4byte 0x42400000
-.global lbl_8051EBE4
 lbl_8051EBE4:
 	.4byte 0x41700000
-.global lbl_8051EBE8
 lbl_8051EBE8:
 	.4byte 0x44200000
-.global lbl_8051EBEC
 lbl_8051EBEC:
 	.4byte 0x43F00000
-.global lbl_8051EBF0
 lbl_8051EBF0:
 	.4byte 0x41400000
-.global lbl_8051EBF4
 lbl_8051EBF4:
 	.4byte 0x42C80000
-.global lbl_8051EBF8
 lbl_8051EBF8:
 	.4byte 0x42AC0000
-.global lbl_8051EBFC
 lbl_8051EBFC:
 	.4byte 0x41500000
-.global lbl_8051EC00
 lbl_8051EC00:
 	.float 0.15
-.global lbl_8051EC04
 lbl_8051EC04:
 	.4byte 0xC1480000
-.global lbl_8051EC08
 lbl_8051EC08:
 	.4byte 0xC1F00000
-.global lbl_8051EC0C
 lbl_8051EC0C:
 	.4byte 0x3FA66666
-.global lbl_8051EC10
 lbl_8051EC10:
 	.4byte 0x3F933333
 	.4byte 0x00000000
@@ -14907,12 +14832,11 @@ getCategoryColorId__Q28Morimura10TZukanBaseFi:
 /* 8037C858 00379798  38 60 00 00 */	li r3, 0
 /* 8037C85C 0037979C  4E 80 00 20 */	blr 
 
-.global __sinit_zukan2D_cpp
-__sinit_zukan2D_cpp:
+__sinit_zukan2D_cpp: # static initializer
 /* 8037C860 003797A0  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8037C864 003797A4  3C 60 80 51 */	lis r3, __float_nan@ha
 /* 8037C868 003797A8  39 43 48 B0 */	addi r10, r3, __float_nan@l
-/* 8037C86C 003797AC  3C E0 80 4E */	lis r7, lbl_804E3928@ha
+/* 8037C86C 003797AC  3C E0 80 4E */	lis r7, govNAN___Q24Game5P2JST@ha
 /* 8037C870 003797B0  BF 41 00 08 */	stmw r26, 8(r1)
 /* 8037C874 003797B4  3B E0 00 FF */	li r31, 0xff
 /* 8037C878 003797B8  38 8D 99 28 */	addi r4, r13, mCategoryColor1w__Q28Morimura10TZukanBase@sda21
@@ -14922,7 +14846,7 @@ __sinit_zukan2D_cpp:
 /* 8037C888 003797C8  39 0D 99 14 */	addi r8, r13, mNewColor1__Q28Morimura10TZukanBase@sda21
 /* 8037C88C 003797CC  38 AD 99 24 */	addi r5, r13, mCategoryColor0b__Q28Morimura10TZukanBase@sda21
 /* 8037C890 003797D0  38 6D 99 2C */	addi r3, r13, mCategoryColor1b__Q28Morimura10TZukanBase@sda21
-/* 8037C894 003797D4  3B 67 39 28 */	addi r27, r7, lbl_804E3928@l
+/* 8037C894 003797D4  3B 67 39 28 */	addi r27, r7, govNAN___Q24Game5P2JST@l
 /* 8037C898 003797D8  C0 22 08 AC */	lfs f1, lbl_8051EC0C@sda21(r2)
 /* 8037C89C 003797DC  3C E0 80 51 */	lis r7, mScrollParm__Q28Morimura10TZukanBase@ha
 /* 8037C8A0 003797E0  39 6D 99 10 */	addi r11, r13, mNewColor0__Q28Morimura10TZukanBase@sda21
@@ -14978,12 +14902,12 @@ __sinit_zukan2D_cpp:
 /* 8037C968 003798A8  9B E3 00 01 */	stb r31, 1(r3)
 /* 8037C96C 003798AC  9B E3 00 02 */	stb r31, 2(r3)
 /* 8037C970 003798B0  99 23 00 03 */	stb r9, 3(r3)
-/* 8037C974 003798B4  93 4D 98 F0 */	stw r26, lbl_80515F70@sda21(r13)
+/* 8037C974 003798B4  93 4D 98 F0 */	stw r26, gu32NAN___Q24Game5P2JST@sda21(r13)
 /* 8037C978 003798B8  D1 5B 00 00 */	stfs f10, 0(r27)
 /* 8037C97C 003798BC  D1 5B 00 04 */	stfs f10, 4(r27)
 /* 8037C980 003798C0  D1 5B 00 08 */	stfs f10, 8(r27)
 /* 8037C984 003798C4  BB 41 00 08 */	lmw r26, 8(r1)
-/* 8037C988 003798C8  D1 4D 98 F4 */	stfs f10, lbl_80515F74@sda21(r13)
+/* 8037C988 003798C8  D1 4D 98 F4 */	stfs f10, gfNAN___Q24Game5P2JST@sda21(r13)
 /* 8037C98C 003798CC  38 21 00 20 */	addi r1, r1, 0x20
 /* 8037C990 003798D0  4E 80 00 20 */	blr 
 
