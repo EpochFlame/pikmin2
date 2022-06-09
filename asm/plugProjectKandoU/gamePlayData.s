@@ -126,17 +126,15 @@ __vt__Q24Game17PelletFirstMemory:
 .balign 8
 .global playData__4Game
 playData__4Game:
-	.skip 0x8
+	.skip 0x4
 
 .section .sdata2, "a"     # 0x80516360 - 0x80520E40
 .balign 8
-.global lbl_805199D0
 lbl_805199D0:
-	.4byte 0x00000000
-.global lbl_805199D4
+	.float 0.0
 lbl_805199D4:
-	.4byte 0x42C80000
-.global lbl_805199D8
+	.float 100.0
+.balign 8
 lbl_805199D8:
 	.4byte 0x43300000
 	.4byte 0x80000000
@@ -1892,13 +1890,14 @@ lbl_801E6B48:
 /* 801E6B50 001E3A90  80 6D 94 C0 */	lwz r3, generatorCache__4Game@sda21(r13)
 /* 801E6B54 001E3A94  48 00 AE 9D */	bl clearCache__Q24Game14GeneratorCacheFv
 /* 801E6B58 001E3A98  38 00 00 00 */	li r0, 0
+li r11, 2
 /* 801E6B5C 001E3A9C  38 7F 00 A8 */	addi r3, r31, 0xa8
 /* 801E6B60 001E3AA0  90 1F 00 E8 */	stw r0, 0xe8(r31)
 /* 801E6B64 001E3AA4  90 1F 00 EC */	stw r0, 0xec(r31)
 /* 801E6B68 001E3AA8  90 1F 00 FC */	stw r0, 0xfc(r31)
-/* 801E6B6C 001E3AAC  90 1F 00 C0 */	stw r0, 0xc0(r31)
+/* 801E6B6C 001E3AAC  90 1F 00 C0 */	stw r11, 0xc0(r31) # set spicy count to 2
 /* 801E6B70 001E3AB0  90 1F 00 C8 */	stw r0, 0xc8(r31)
-/* 801E6B74 001E3AB4  90 1F 00 C4 */	stw r0, 0xc4(r31)
+/* 801E6B74 001E3AB4  90 1F 00 C4 */	stw r11, 0xc4(r31) # set bitter count to 2
 /* 801E6B78 001E3AB8  90 1F 00 CC */	stw r0, 0xcc(r31)
 /* 801E6B7C 001E3ABC  48 00 A7 11 */	bl clear__Q24Game13PikiContainerFv
 /* 801E6B80 001E3AC0  7F E3 FB 78 */	mr r3, r31
@@ -2085,9 +2084,9 @@ lbl_801E6DFC:
 /* 801E6DFC 001E3D3C  7F E3 FB 78 */	mr r3, r31
 /* 801E6E00 001E3D40  48 00 02 0D */	bl resetContainerFlag__Q24Game8PlayDataFv
 /* 801E6E04 001E3D44  38 7F 00 30 */	addi r3, r31, 0x30
-/* 801E6E08 001E3D48  48 23 55 45 */	bl all_zero__8BitFlagsFv
+/* 801E6E08 001E3D48  48 23 55 45 */	bl all_one__8BitFlagsFv # reverse zeroing out demos
 /* 801E6E0C 001E3D4C  38 7F 00 38 */	addi r3, r31, 0x38
-/* 801E6E10 001E3D50  48 23 55 3D */	bl all_zero__8BitFlagsFv
+/* 801E6E10 001E3D50  48 23 55 3D */	bl all_one__8BitFlagsFv # mark stuff as collected
 /* 801E6E14 001E3D54  38 7F 00 40 */	addi r3, r31, 0x40
 /* 801E6E18 001E3D58  48 04 CB 6D */	bl clear__Q34Game8TekiStat3MgrFv
 /* 801E6E1C 001E3D5C  38 00 00 00 */	li r0, 0

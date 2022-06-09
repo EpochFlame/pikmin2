@@ -266,11 +266,11 @@ lbl_80519FE4:
 lbl_80519FE8:
 	.float 900.0
 lbl_80519FEC: # Louie Start X
-	.float -1260.0
+	.float -900.0
 lbl_80519FF0: # Louie Start Y
-	.float -80.0
+	.float 100.0
 lbl_80519FF4: # Louie Start Z
-	.float 4350.0
+	.float -600.0
 lbl_80519FF8:
 	.float 7.6969023
 lbl_80519FFC:
@@ -2642,11 +2642,12 @@ onMovieDone__Q34Game10SingleGame9GameStateFPQ24Game17SingleGameSectionPQ24Game11
 /* 80215824 00212764  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 80215828 00212768  38 80 00 00 */	li r4, 0
 /* 8021582C 0021276C  4B FD 2A 35 */	bl getGroundOtakaraNum__Q24Game8PlayDataFi
-/* 80215830 00212770  80 6D 94 90 */	lwz r3, gameSystem__4Game@sda21(r13)
+#/* 80215830 00212770  80 6D 94 90 */	lwz r3, gameSystem__4Game@sda21(r13)
 #/* 80215834 00212774  38 80 00 00 */	li r4, 0
-/* 80215838 00212778  4B FD 2A 29 */	bl getCurrentDay__4GameFPQ24Game10GameSystem
-/* 8021583C 0021277C  2C 03 00 01 */	cmpwi r3, 1
-/* 80215840 00212780  40 82 00 74 */	bne lbl_802158B4 # if not day 1, don't play the cutscene!
+#/* 80215838 00212778  4B FD 2A 29 */	bl getCurrentDay__4GameFPQ24Game10GameSystem
+#/* 8021583C 0021277C  2C 03 00 01 */	cmpwi r3, 1
+/* 80215840 00212780  40 82 00 74 */	b lbl_802158B4 # if not day 1, don't play the cutscene!
+# edited to b: day 1 is eternal
 /* 80215844 00212784  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 80215848 00212788  38 80 00 00 */	li r4, 0
 /* 8021584C 0021278C  4B FD 41 75 */	bl getGroundOtakaraNum_Old__Q24Game8PlayDataFi
