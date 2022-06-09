@@ -419,8 +419,20 @@ lbl_80192E7C:
 /* 80192E90 0018FDD0  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 80192E94 0018FDD4  41 82 07 30 */	beq lbl_801935C4
 /* 80192E98 0018FDD8  88 9F 02 B8 */	lbz r4, 0x2b8(r31)
-/* 80192E9C 0018FDDC  2C 04 00 03 */	cmpwi r4, 3 # changed for bulbmin
+/* 80192E9C 0018FDDC  2C 04 00 03 */	cmpwi r4, 5 # changed for bulbmin
 /* 80192EA0 0018FDE0  40 82 02 B0 */	bne lbl_80193150
+# make wild bulbmin frigging work when whistled
+mr r3, r31
+li r4, 0 # set r4 to 0 (false)
+lwz r12, 0(r31)
+lwz r12, 0x1f8(r12) # set the current pikmin zikatu state to false
+mtctr r12
+bctrl 
+lis r3, zikatuPikis__Q24Game8GameStat@ha
+lbz r4, 0x2b8(r31)
+addi r3, r3, zikatuPikis__Q24Game8GameStat@l
+bl dec__Q34Game8GameStat11PikiCounterFi
+b lbl_80193150
 /* 80192EA4 0018FDE4  7F E3 FB 78 */	mr r3, r31
 /* 80192EA8 0018FDE8  4B FB 60 8D */	bl getStateID__Q24Game4PikiFv
 /* 80192EAC 0018FDEC  2C 03 00 1B */	cmpwi r3, 0x1b
