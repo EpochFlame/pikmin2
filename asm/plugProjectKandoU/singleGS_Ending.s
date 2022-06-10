@@ -506,11 +506,16 @@ lbl_80232C28:
 /* 80232C60 0022FBA0  80 7D 00 1C */	lwz r3, 0x1c(r29)
 /* 80232C64 0022FBA4  48 21 D8 21 */	bl play__Q24Game9THPPlayerFv
 /* 80232C68 0022FBA8  48 00 05 F4 */	b lbl_8023325C
-lbl_80232C6C:
+lbl_80232C6C: # make ending cutscene skippable
+lwz r3, 0x28(r29)
+lwz r0, 0x1c(r3)
+rlwinm. r0, r0, 0, 0x13, 0x13
+bne lbl_endplay
 /* 80232C6C 0022FBAC  80 7D 00 1C */	lwz r3, 0x1c(r29)
 /* 80232C70 0022FBB0  48 21 DC 25 */	bl isFinishPlaying__Q24Game9THPPlayerFv
 /* 80232C74 0022FBB4  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 80232C78 0022FBB8  41 82 05 E4 */	beq lbl_8023325C
+lbl_endplay:
 /* 80232C7C 0022FBBC  80 7D 00 1C */	lwz r3, 0x1c(r29)
 /* 80232C80 0022FBC0  48 21 D8 DD */	bl stop__Q24Game9THPPlayerFv
 /* 80232C84 0022FBC4  38 60 00 04 */	li r3, 4
@@ -540,11 +545,16 @@ lbl_80232CA4:
 /* 80232CDC 0022FC1C  80 7D 00 1C */	lwz r3, 0x1c(r29)
 /* 80232CE0 0022FC20  48 21 D7 A5 */	bl play__Q24Game9THPPlayerFv
 /* 80232CE4 0022FC24  48 00 05 78 */	b lbl_8023325C
-lbl_80232CE8:
+lbl_80232CE8: # make staff roll skippable
+lwz r3, 0x28(r29)
+lwz r0, 0x1c(r3)
+rlwinm. r0, r0, 0, 0x13, 0x13
+bne lbl_endcredits
 /* 80232CE8 0022FC28  80 7D 00 1C */	lwz r3, 0x1c(r29)
 /* 80232CEC 0022FC2C  48 21 DB A9 */	bl isFinishPlaying__Q24Game9THPPlayerFv
 /* 80232CF0 0022FC30  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 80232CF4 0022FC34  41 82 05 68 */	beq lbl_8023325C
+lbl_endcredits:
 /* 80232CF8 0022FC38  80 7D 00 1C */	lwz r3, 0x1c(r29)
 /* 80232CFC 0022FC3C  48 21 D8 61 */	bl stop__Q24Game9THPPlayerFv
 /* 80232D00 0022FC40  38 00 00 05 */	li r0, 5
