@@ -1088,6 +1088,9 @@ KONO:=\
 	$(BUILD_DIR)/asm/plugProjectKonoU/khWinLoseReason.o\
 	$(BUILD_DIR)/src/plugProjectKonoU/khMailSaveData.o\
 
+MODDING:=\
+	$(BUILD_DIR)/src/moddingU/main.o\
+
 BOOTUP:=\
 	$(BUILD_DIR)/src/sysBootupU/sysBootup.o\
 
