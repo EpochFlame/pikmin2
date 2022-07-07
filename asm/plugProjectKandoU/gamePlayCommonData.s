@@ -459,8 +459,9 @@ isChallengeGamePlayable__Q24Game14PlayCommonDataFv:
 
 .global isLouieRescued__Q24Game14PlayCommonDataFv
 isLouieRescued__Q24Game14PlayCommonDataFv:
-/* 80234718 00231658  88 03 00 14 */	lbz r0, 0x14(r3)
-/* 8023471C 0023165C  54 03 F7 FE */	rlwinm r3, r0, 0x1e, 0x1f, 0x1f
+#/* 80234718 00231658  88 03 00 14 */	lbz r0, 0x14(r3)
+#/* 8023471C 0023165C  54 03 F7 FE */	rlwinm r3, r0, 0x1e, 0x1f, 0x1f
+li r3, 1 # louie notes unlocked
 /* 80234720 00231660  4E 80 00 20 */	blr 
 
 .global isPerfectChallenge__Q24Game14PlayCommonDataFv
