@@ -611,11 +611,11 @@ collisionCallback__Q34Game10FireChappy3ObjFRQ24Game9CollEvent:
 lbl_8028F9B8:
 /* 8028F9B8 0028C8F8  80 DE 00 C0 */	lwz r6, 0xc0(r30)
 /* 8028F9BC 0028C8FC  3C A0 80 4B */	lis r5, __vt__Q24Game11Interaction@ha
-/* 8028F9C0 0028C900  3C 60 80 4B */	lis r3, __vt__Q24Game12InteractFire@ha
+/* 8028F9C0 0028C900  3C 60 80 4B */	lis r3, __vt__Q24Game11InteractGas@ha
 /* 8028F9C4 0028C904  38 81 00 08 */	addi r4, r1, 8
 /* 8028F9C8 0028C908  C0 06 06 04 */	lfs f0, 0x604(r6)
 /* 8028F9CC 0028C90C  38 A5 A3 00 */	addi r5, r5, __vt__Q24Game11Interaction@l
-/* 8028F9D0 0028C910  38 03 48 78 */	addi r0, r3, __vt__Q24Game12InteractFire@l
+/* 8028F9D0 0028C910  38 03 48 78 */	addi r0, r3, __vt__Q24Game11InteractGas@l
 /* 8028F9D4 0028C914  90 A1 00 08 */	stw r5, 8(r1)
 /* 8028F9D8 0028C918  93 C1 00 0C */	stw r30, 0xc(r1)
 /* 8028F9DC 0028C91C  90 01 00 08 */	stw r0, 8(r1)
