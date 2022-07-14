@@ -2824,14 +2824,15 @@ viewGetShape__Q24Game4NaviFv:
 
 .global viewGetBaseScale__Q24Game4NaviFv
 viewGetBaseScale__Q24Game4NaviFv:
-/* 80141744 0013E684  A0 03 02 DC */	lhz r0, 0x2dc(r3)
-/* 80141748 0013E688  28 00 00 00 */	cmplwi r0, 0
-/* 8014174C 0013E68C  40 82 00 0C */	bne lbl_80141758
+# both navis have 1.3 scale now
+#/* 80141744 0013E684  A0 03 02 DC */	lhz r0, 0x2dc(r3)
+#/* 80141748 0013E688  28 00 00 00 */	cmplwi r0, 0
+#/* 8014174C 0013E68C  40 82 00 0C */	bne lbl_80141758
 /* 80141750 0013E690  C0 22 A0 08 */	lfs f1, lbl_80518368@sda21(r2)
 /* 80141754 0013E694  4E 80 00 20 */	blr 
-lbl_80141758:
-/* 80141758 0013E698  C0 22 A0 0C */	lfs f1, lbl_8051836C@sda21(r2)
-/* 8014175C 0013E69C  4E 80 00 20 */	blr 
+#lbl_80141758:
+#/* 80141758 0013E698  C0 22 A0 0C */	lfs f1, lbl_8051836C@sda21(r2)
+#/* 8014175C 0013E69C  4E 80 00 20 */	blr 
 
 .global doEntry__Q24Game4NaviFv
 doEntry__Q24Game4NaviFv:
