@@ -62,7 +62,7 @@ __vt__Q34Game8MaroFrog3Obj:
 	.4byte doSave__Q24Game8CreatureFR6Stream
 	.4byte doLoad__Q24Game8CreatureFR6Stream
 	.4byte bounceCallback__Q24Game8CreatureFPQ23Sys8Triangle
-	.4byte collisionCallback__Q34Game4Frog3ObjFRQ24Game9CollEvent
+	.4byte collisionCallback__Q34Game8MaroFrog3ObjFRQ24Game9CollEvent
 	.4byte platCallback__Q24Game8CreatureFRQ24Game9PlatEvent
 	.4byte getJAIObject__Q24Game9EnemyBaseFv
 	.4byte getPSCreature__Q24Game9EnemyBaseFv
@@ -606,3 +606,73 @@ lbl_80261D6C:
 getEnemyTypeID__Q34Game8MaroFrog3ObjFv:
 /* 80261D84 0025ECC4  38 60 00 12 */	li r3, 0x12
 /* 80261D88 0025ECC8  4E 80 00 20 */	blr 
+
+.global collisionCallback__Q34Game8MaroFrog3ObjFRQ24Game9CollEvent
+collisionCallback__Q34Game8MaroFrog3ObjFRQ24Game9CollEvent:
+/* 80258B84 00255AC4  94 21 FF D0 */	stwu r1, -0x30(r1)
+/* 80258B88 00255AC8  7C 08 02 A6 */	mflr r0
+/* 80258B8C 00255ACC  90 01 00 34 */	stw r0, 0x34(r1)
+/* 80258B90 00255AD0  93 E1 00 2C */	stw r31, 0x2c(r1)
+/* 80258B94 00255AD4  93 C1 00 28 */	stw r30, 0x28(r1)
+/* 80258B98 00255AD8  7C 9E 23 78 */	mr r30, r4
+/* 80258B9C 00255ADC  93 A1 00 24 */	stw r29, 0x24(r1)
+/* 80258BA0 00255AE0  7C 7D 1B 78 */	mr r29, r3
+/* 80258BA4 00255AE4  83 E4 00 00 */	lwz r31, 0(r4)
+/* 80258BA8 00255AE8  28 1F 00 00 */	cmplwi r31, 0
+/* 80258BAC 00255AEC  41 82 00 A8 */	beq lbl_80258C54
+/* 80258BB0 00255AF0  80 1D 01 E0 */	lwz r0, 0x1e0(r29)
+/* 80258BB4 00255AF4  54 00 05 AD */	rlwinm. r0, r0, 0, 0x16, 0x16
+/* 80258BB8 00255AF8  40 82 00 9C */	bne lbl_80258C54
+/* 80258BBC 00255AFC  88 1D 02 D9 */	lbz r0, 0x2d9(r29)
+/* 80258BC0 00255B00  28 00 00 00 */	cmplwi r0, 0
+/* 80258BC4 00255B04  41 82 00 90 */	beq lbl_80258C54
+/* 80258BC8 00255B08  80 1F 00 C8 */	lwz r0, 0xc8(r31)
+/* 80258BCC 00255B0C  28 00 00 00 */	cmplwi r0, 0
+/* 80258BD0 00255B10  41 82 00 84 */	beq lbl_80258C54
+/* 80258BD4 00255B14  7F E3 FB 78 */	mr r3, r31
+/* 80258BD8 00255B18  81 9F 00 00 */	lwz r12, 0(r31)
+/* 80258BDC 00255B1C  81 8C 00 1C */	lwz r12, 0x1c(r12)
+/* 80258BE0 00255B20  7D 89 03 A6 */	mtctr r12
+/* 80258BE4 00255B24  4E 80 04 21 */	bctrl 
+/* 80258BE8 00255B28  54 60 06 3F */	clrlwi. r0, r3, 0x18
+/* 80258BEC 00255B2C  40 82 00 20 */	bne lbl_80258C0C
+/* 80258BF0 00255B30  7F E3 FB 78 */	mr r3, r31
+/* 80258BF4 00255B34  81 9F 00 00 */	lwz r12, 0(r31)
+/* 80258BF8 00255B38  81 8C 00 18 */	lwz r12, 0x18(r12)
+/* 80258BFC 00255B3C  7D 89 03 A6 */	mtctr r12
+/* 80258C00 00255B40  4E 80 04 21 */	bctrl 
+/* 80258C04 00255B44  54 60 06 3F */	clrlwi. r0, r3, 0x18
+/* 80258C08 00255B48  41 82 00 4C */	beq lbl_80258C54
+lbl_80258C0C:
+/* 80258C0C 00255B4C  80 BD 00 C0 */	lwz r5, 0xc0(r29)
+/* 80258C10 00255B50  3C 80 80 4B */	lis r4, __vt__Q24Game11Interaction@ha
+/* 80258C14 00255B54  3C 60 80 4B */	lis r3, __vt__Q24Game13InteractPress@ha
+/* 80258C18 00255B58  38 00 00 00 */	li r0, 0
+/* 80258C1C 00255B5C  C0 05 06 04 */	lfs f0, 0x604(r5)
+/* 80258C20 00255B60  38 A4 A3 00 */	addi r5, r4, __vt__Q24Game11Interaction@l
+/* 80258C24 00255B64  38 63 B3 20 */	addi r3, r3, __vt__Q24Game13InteractPress@l
+/* 80258C28 00255B68  38 81 00 08 */	addi r4, r1, 8
+/* 80258C2C 00255B6C  90 A1 00 08 */	stw r5, 8(r1)
+/* 80258C30 00255B70  93 A1 00 0C */	stw r29, 0xc(r1)
+/* 80258C34 00255B74  90 61 00 08 */	stw r3, 8(r1)
+/* 80258C38 00255B78  D0 01 00 10 */	stfs f0, 0x10(r1)
+/* 80258C3C 00255B7C  90 01 00 14 */	stw r0, 0x14(r1)
+/* 80258C40 00255B80  80 7E 00 00 */	lwz r3, 0(r30)
+/* 80258C44 00255B84  81 83 00 00 */	lwz r12, 0(r3)
+/* 80258C48 00255B88  81 8C 01 A4 */	lwz r12, 0x1a4(r12)
+/* 80258C4C 00255B8C  7D 89 03 A6 */	mtctr r12
+/* 80258C50 00255B90  4E 80 04 21 */	bctrl 
+lbl_80258C54:
+/* 80258C54 00255B94  7F A3 EB 78 */	mr r3, r29
+/* 80258C58 00255B98  7F C4 F3 78 */	mr r4, r30
+/* 80258C5C 00255B9C  81 9D 00 00 */	lwz r12, 0(r29)
+/* 80258C60 00255BA0  81 8C 02 40 */	lwz r12, 0x240(r12)
+/* 80258C64 00255BA4  7D 89 03 A6 */	mtctr r12
+/* 80258C68 00255BA8  4E 80 04 21 */	bctrl 
+/* 80258C6C 00255BAC  80 01 00 34 */	lwz r0, 0x34(r1)
+/* 80258C70 00255BB0  83 E1 00 2C */	lwz r31, 0x2c(r1)
+/* 80258C74 00255BB4  83 C1 00 28 */	lwz r30, 0x28(r1)
+/* 80258C78 00255BB8  83 A1 00 24 */	lwz r29, 0x24(r1)
+/* 80258C7C 00255BBC  7C 08 03 A6 */	mtlr r0
+/* 80258C80 00255BC0  38 21 00 30 */	addi r1, r1, 0x30
+/* 80258C84 00255BC4  4E 80 00 20 */	blr 
