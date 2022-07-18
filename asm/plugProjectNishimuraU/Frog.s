@@ -813,11 +813,11 @@ collisionCallback__Q34Game4Frog3ObjFRQ24Game9CollEvent:
 lbl_80258C0C:
 /* 80258C0C 00255B4C  80 BD 00 C0 */	lwz r5, 0xc0(r29)
 /* 80258C10 00255B50  3C 80 80 4B */	lis r4, __vt__Q24Game11Interaction@ha
-/* 80258C14 00255B54  3C 60 80 4B */	lis r3, __vt__Q24Game12InteractBomb@ha
+/* 80258C14 00255B54  3C 60 80 4B */	lis r3, __vt__Q24Game13InteractPress@ha
 /* 80258C18 00255B58  38 00 00 00 */	li r0, 0
 /* 80258C1C 00255B5C  C0 05 06 04 */	lfs f0, 0x604(r5)
 /* 80258C20 00255B60  38 A4 A3 00 */	addi r5, r4, __vt__Q24Game11Interaction@l
-/* 80258C24 00255B64  38 63 B3 20 */	addi r3, r3, __vt__Q24Game12InteractBomb@l
+/* 80258C24 00255B64  38 63 B3 20 */	addi r3, r3, __vt__Q24Game13InteractPress@l
 /* 80258C28 00255B68  38 81 00 08 */	addi r4, r1, 8
 /* 80258C2C 00255B6C  90 A1 00 08 */	stw r5, 8(r1)
 /* 80258C30 00255B70  93 A1 00 0C */	stw r29, 0xc(r1)
