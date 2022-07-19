@@ -138,6 +138,19 @@ struct InteractHipdrop : public InteractAttack {
 	// _00 VTBL
 	// _04 Parent
 };
+
+struct InteractBomb : public Interaction {
+	virtual void actPiki(Piki*);       // _04
+	virtual void actNavi(Navi*);       // _08
+	virtual void actEnemy(EnemyBase*); // _0C
+
+	// _00 VTBL
+	
+	Creature* m_creature;        // _04
+	f32 _08;                     // _08
+	Vector3f _0C;                // _0C
+};
+
 } // namespace Game
 
 #endif

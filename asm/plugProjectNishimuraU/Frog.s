@@ -830,6 +830,8 @@ lbl_80258C0C:
 /* 80258C4C 00255B8C  7D 89 03 A6 */	mtctr r12
 /* 80258C50 00255B90  4E 80 04 21 */	bctrl 
 lbl_80258C54:
+mr r3, r29
+bl frogDeathSphere__4GameFPQ24Game9EnemyBase
 /* 80258C54 00255B94  7F A3 EB 78 */	mr r3, r29
 /* 80258C58 00255B98  7F C4 F3 78 */	mr r4, r30
 /* 80258C5C 00255B9C  81 9D 00 00 */	lwz r12, 0(r29)
