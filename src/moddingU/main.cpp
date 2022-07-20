@@ -59,7 +59,12 @@ void frogDeathSphere(Game::EnemyBase* frog)
 			Game::Piki* piki_obj = (Game::Piki*)obj;
 			//Vector3f piki_pos    = piki_obj->getPosition();
 			OSReport("PIKMIN EXPLOSION IMMINENT\n");
+			// set up interactBomb
 			InteractBomb interactBomb;
+			interactBomb.m_creature = frog;
+			interactBomb._08 = 1.0f;
+			interactBomb._0C = Vector3f(-1, 0, 0);
+			
 			piki_obj->stimulate(interactBomb);
 			OSReport("PIKMIN STIMULATED\n");
 			/*
