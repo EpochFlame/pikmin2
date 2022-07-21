@@ -1,6 +1,9 @@
 #include "types.h"
 #include "Dolphin/os.h"
 #include "Game/GameSystem.h"
+#include "Game/CameraMgr.h"
+#include "Game/CollEvent.h"
+#include "Game/rumble.h"
 #include "Game/EnemyBase.h"
 #include "Game/TimeMgr.h"
 #include "Game/MoviePlayer.h"
@@ -29,63 +32,42 @@ void autopluck(NaviWalkState* walkstate, Navi* captain)
 	walkstate->execAI(captain);
 }
 
-void frogDeathSphere(Game::EnemyBase* frog)
+void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 {
-	if (frog->getCreatureID() == EnemyTypeID::EnemyID_MaroFrog) return;
+	if (frog->getCreatureID() == EnemyTypeID::EnemyID_MaroFrog)
+		return;
+
+	Vector3f fxPos;
+	frog->setEmotionCaution();
+	frog->getCommonEffectPos(fxPos);
+	fxPos.y -= 85.0f; // effect offset to ground the explosion
 	
-	Vector3f sphere_pos = frog->getPosition();
-	OSReport("sphere_pos.x = %f\n", sphere_pos.x);
-	OSReport("sphere_pos.y = %f\n", sphere_pos.y);
-	OSReport("sphere_pos.z = %f\n", sphere_pos.z);
+	efx::TSimple1 simpleFx(12, nullptr);
+	efx::Arg arg(fxPos);
+	simpleFx.create(&arg);
 
-	// Create a sphere with a radius of 75 at active frog's position
-	Sys::Sphere detectionSphere(sphere_pos, 75);
-	Game::CellIteratorArg arg(detectionSphere);
+	cameraMgr->startVibration(12, fxPos, 2);
+	rumbleMgr->startRumble(15, fxPos, 2);
 
-	// Create the iterator based on the sphere
-	Game::CellIterator iterator(arg);
+	Creature* collCreature = event.m_collidingCreature;
 
-	// Initialise properly
-	iterator.first();
+	InteractBomb bomb;
+	bomb.m_creature = frog;
+	bomb._08        = 10000.0f;
 
-	// Loop until there are no objects left
-	while (!iterator.isDone()) {
-		// Grab the current object by calling *iterator
-		Game::CellObject* obj = *iterator;
+	Vector3f curPos   = frog->getPosition();
+	Vector3f otherPos = collCreature->getPosition();
+	Vector3f direction(otherPos.x - curPos.x, 0, otherPos.z - curPos.z);
 
-		// Explode any Pikis within the sphere.
-		if (obj->getObjType() == OBJTYPE_Piki) {
-			OSReport("PIKMIN DETECTED\n");
-			Game::Piki* piki_obj = (Game::Piki*)obj;
-			//Vector3f piki_pos    = piki_obj->getPosition();
-			OSReport("PIKMIN EXPLOSION IMMINENT\n");
-			// set up interactBomb
-			InteractBomb interactBomb;
-			interactBomb.m_creature = frog;
-			interactBomb._08 = 1.0f;
-			interactBomb._0C = Vector3f(-1, 0, 0);
-			
-			piki_obj->stimulate(interactBomb);
-			OSReport("PIKMIN STIMULATED\n");
-			/*
-			// Turn the position into a direction (velocity), pushes the Piki away from the sphere
-			piki_pos.x -= sphere_pos.x;
-			piki_pos.y = 10.0f;
-			piki_pos.z -= sphere_pos.z;
+	direction.normalise();
+	bomb._0C = Vector3f(direction.x * 50, 0, direction.z * 50);
+	collCreature->stimulate(bomb);
 
-			// Exaggerate the velocity
-			piki_pos.x *= 25;
-			piki_pos.z *= 25;
-
-			piki_obj->setVelocity(piki_pos);
-			*/
-		}
-		OSReport("ITERATOR NEXT INCOMING\n");
-		// Iterate to the next object
-		iterator.next();
+	// Water can't save the Pikmin
+	if (collCreature->isPiki() && collCreature->inWater()) {
+		collCreature->kill(nullptr);
 	}
 }
-
 }; // namespace Game
 
 namespace mod {

@@ -145,10 +145,10 @@ struct InteractBomb : public Interaction {
 	virtual void actEnemy(EnemyBase*); // _0C
 
 	// _00 VTBL
-	
-	Creature* m_creature;        // _04
-	f32 _08;                     // _08
-	Vector3f _0C;                // _0C
+
+	Creature* m_creature; // _04
+	f32 _08;              // _08
+	Vector3f _0C;         // _0C
 };
 
 } // namespace Game

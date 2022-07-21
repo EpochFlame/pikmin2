@@ -811,6 +811,9 @@ collisionCallback__Q34Game4Frog3ObjFRQ24Game9CollEvent:
 /* 80258C04 00255B44  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 80258C08 00255B48  41 82 00 4C */	beq lbl_80258C54
 lbl_80258C0C:
+mr r3, r29
+mr r4, r30
+bl frogDeathSphere__4GameFPQ24Game9EnemyBaseRQ24Game9CollEvent
 /* 80258C0C 00255B4C  80 BD 00 C0 */	lwz r5, 0xc0(r29)
 /* 80258C10 00255B50  3C 80 80 4B */	lis r4, __vt__Q24Game11Interaction@ha
 /* 80258C14 00255B54  3C 60 80 4B */	lis r3, __vt__Q24Game13InteractPress@ha
@@ -830,8 +833,6 @@ lbl_80258C0C:
 /* 80258C4C 00255B8C  7D 89 03 A6 */	mtctr r12
 /* 80258C50 00255B90  4E 80 04 21 */	bctrl 
 lbl_80258C54:
-mr r3, r29
-bl frogDeathSphere__4GameFPQ24Game9EnemyBase
 /* 80258C54 00255B94  7F A3 EB 78 */	mr r3, r29
 /* 80258C58 00255B98  7F C4 F3 78 */	mr r4, r30
 /* 80258C5C 00255B9C  81 9D 00 00 */	lwz r12, 0(r29)
