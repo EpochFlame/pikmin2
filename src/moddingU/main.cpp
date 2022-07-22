@@ -41,7 +41,7 @@ void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 	frog->setEmotionCaution();
 	frog->getCommonEffectPos(fxPos);
 	fxPos.y -= 85.0f; // effect offset to ground the explosion
-	
+
 	efx::TSimple1 simpleFx(12, nullptr);
 	efx::Arg arg(fxPos);
 	simpleFx.create(&arg);

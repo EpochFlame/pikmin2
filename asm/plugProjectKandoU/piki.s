@@ -1322,6 +1322,8 @@ update__Q24Game4PikiFv:
 /* 8014852C 0014546C  81 9E 00 00 */	lwz r12, 0(r30)
 /* 80148530 00145470  81 8C 02 10 */	lwz r12, 0x210(r12)
 /* 80148534 00145474  7D 89 03 A6 */	mtctr r12
+mr r3, r30
+bl leafBluePikmin__4GameFRQ24Game4Piki
 /* 80148538 00145478  4E 80 04 21 */	bctrl 
 /* 8014853C 0014547C  80 6D 9A EC */	lwz r3, sys@sda21(r13)
 /* 80148540 00145480  38 82 A0 D0 */	addi r4, r2, lbl_80518430@sda21
