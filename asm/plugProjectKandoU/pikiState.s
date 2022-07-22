@@ -10232,6 +10232,7 @@ exec__Q24Game14PikiDrownStateFPQ24Game4Piki:
 /* 80190DC0 0018DD00  BF 61 00 9C */	stmw r27, 0x9c(r1)
 /* 80190DC4 0018DD04  7C 7E 1B 78 */	mr r30, r3
 /* 80190DC8 0018DD08  7C 9F 23 78 */	mr r31, r4
+# mr r11, r4
 /* 80190DCC 0018DD0C  88 03 00 1C */	lbz r0, 0x1c(r3)
 /* 80190DD0 0018DD10  28 00 00 00 */	cmplwi r0, 0
 /* 80190DD4 0018DD14  41 82 01 34 */	beq lbl_80190F08
@@ -10485,6 +10486,10 @@ lbl_80191160:
 /* 80191174 0018E0B4  4B FA BD B9 */	bl assertMotion__Q24Game8FakePikiFi
 /* 80191178 0018E0B8  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 8019117C 0018E0BC  40 82 00 20 */	bne lbl_8019119C
+# anti-bulbmin drown death (fails to work)
+# lbz r0, 0x2b8(r11)
+# cmpwi r0, 5
+# beq lbl_8019119C
 /* 80191180 0018E0C0  38 60 00 03 */	li r3, 3
 /* 80191184 0018E0C4  48 09 F5 95 */	bl inc__Q24Game8DeathMgrFi
 /* 80191188 0018E0C8  38 00 FF FF */	li r0, -1
@@ -10797,6 +10802,10 @@ lbl_801915C0:
 lbl_801915D4:
 /* 801915D4 0018E514  2C 00 00 03 */	cmpwi r0, 3
 /* 801915D8 0018E518  40 80 00 20 */	bge lbl_801915F8
+# anti-bulbmin drown death
+lbz r0, 0x2b8(r31)
+cmpwi r0, 5
+beq lbl_801915F8
 /* 801915DC 0018E51C  38 60 00 03 */	li r3, 3
 /* 801915E0 0018E520  48 09 F1 39 */	bl inc__Q24Game8DeathMgrFi
 /* 801915E4 0018E524  38 00 FF FF */	li r0, -1
