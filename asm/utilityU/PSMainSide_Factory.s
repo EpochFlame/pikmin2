@@ -79,6 +79,9 @@ lbl_8049CF90: # Shift-JIS "乱数位置Avoid"
 	.4byte 0x88CA9275
 	.4byte 0x41766F69
 	.4byte 0x64000000
+.balign 4
+lbl_gmp:
+	.asciz "gmp.bms"
 
 .section .data, "wa"  # 0x8049E220 - 0x804EFC20
 .balign 8
@@ -777,19 +780,38 @@ curSceneIsBigBossFloor__Q23PSM8SceneMgrFv:
 newDirectedBgm__Q23PSM8SceneMgrFPCcRQ27JAInter9SoundInfo:
 /* 8045A2EC 0045722C  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8045A2F0 00457230  7C 08 02 A6 */	mflr r0
-/* 8045A2F4 00457234  3C 60 80 4A */	lis r3, lbl_8049CE68@ha
 /* 8045A2F8 00457238  90 01 00 24 */	stw r0, 0x24(r1)
 /* 8045A2FC 0045723C  BF 61 00 0C */	stmw r27, 0xc(r1)
+mr r22, r3
+mr r21, r4
+mr r20, r5
+
+# m_boss special replacement part 1
+# if cave id is t_02, and final floor, use gmp.bms
+# else, use m_boss.bms
+bl isGMP__4GameFv
+cmpwi r3, 0
+mr r3, r22
+mr r4, r21
+mr r5, r20
+/* 8045A2F4 00457234  3C 60 80 4A */	lis r3, lbl_8049CE68@ha
 /* 8045A300 00457240  7C 9E 23 78 */	mr r30, r4
 /* 8045A304 00457244  3B A3 CE 68 */	addi r29, r3, lbl_8049CE68@l
 /* 8045A308 00457248  7C BF 2B 78 */	mr r31, r5
 /* 8045A30C 0045724C  7F C3 F3 78 */	mr r3, r30
+beq normal
+li r28, 0
+addi r4, r29, 0x138
+b continue
+normal:
 /* 8045A310 00457250  3B 80 00 00 */	li r28, 0
 /* 8045A314 00457254  38 9D 00 9C */	addi r4, r29, 0x9c
+continue:
 /* 8045A318 00457258  3B 60 00 00 */	li r27, 0
 /* 8045A31C 0045725C  4B C7 03 A5 */	bl strcmp
 /* 8045A320 00457260  2C 03 00 00 */	cmpwi r3, 0
 /* 8045A324 00457264  40 82 00 4C */	bne lbl_8045A370
+#fallback:
 /* 8045A328 00457268  38 60 00 24 */	li r3, 0x24
 /* 8045A32C 0045726C  4B BC 9B 79 */	bl __nw__FUl
 /* 8045A330 00457270  7C 7C 1B 79 */	or. r28, r3, r3
@@ -841,7 +863,7 @@ lbl_8045A3CC:
 /* 8045A3D0 00457310  38 9D 00 B4 */	addi r4, r29, 0xb4
 /* 8045A3D4 00457314  4B C7 02 ED */	bl strcmp
 /* 8045A3D8 00457318  2C 03 00 00 */	cmpwi r3, 0
-/* 8045A3DC 0045731C  40 82 00 4C */	bne lbl_8045A428
+/* 8045A3DC 0045731C  40 82 00 4C */	bne lbl_8045A428 #bne fallback
 /* 8045A3E0 00457320  38 60 00 24 */	li r3, 0x24
 /* 8045A3E4 00457324  4B BC 9A C1 */	bl __nw__FUl
 /* 8045A3E8 00457328  7C 7C 1B 79 */	or. r28, r3, r3

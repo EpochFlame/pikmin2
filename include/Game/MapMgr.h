@@ -8,6 +8,7 @@
 #include "GenericObjectMgr.h"
 #include "MapCollision.h"
 #include "Vector3.h"
+#include "Game/Cave/Info.h"
 
 struct BoundBox;
 struct BoundBox2d;
@@ -63,13 +64,15 @@ struct MapMgr : virtual public GenericObjectMgr {
 
 	// _00: ptr to _0x24 (GenericObjectMgr)
 	// _04: vtable 1
-	RouteMgr* m_routeMgr;     // _08
-	CourseInfo* m_courseInfo; // _0C
-	SeaMgr* m_seaMgr;         // _10
-	u32 _14;                  // _14
-	u32 _18;                  // _18
-	u32 _1C;                  // _1C
-	u32 _20;                  // _20
+	RouteMgr* m_routeMgr;       // _08
+	CourseInfo* m_courseInfo;   // _0C
+	SeaMgr* m_seaMgr;           // _10
+	u32 _14;                    // _14
+	u32 _18;                    // _18
+	u32 _1C;                    // _1C
+	u32 _20;                    // _20
+	u32 _24;                    // _24
+	Cave::CaveInfo* m_caveInfo; // _28
 
 	// _24: GenericObjectMgr
 };

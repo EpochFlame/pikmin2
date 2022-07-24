@@ -6,9 +6,11 @@
 #include "Game/rumble.h"
 #include "Game/EnemyBase.h"
 #include "Game/TimeMgr.h"
+#include "Game/MapMgr.h"
 #include "Game/MoviePlayer.h"
 #include "Game/Interaction.h"
 #include "Game/enemyInfo.h"
+#include "Game/Cave/Info.h"
 #include "JSystem/JUT/JUTGamePad.h"
 #include "SoundID.h"
 #include "PSSystem/SysIF.h"
@@ -67,6 +69,23 @@ void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 	if (collCreature->isPiki() && collCreature->inWater()) {
 		collCreature->kill(nullptr);
 	}
+}
+
+bool isGMP()
+{
+	if (!gameSystem || !mapMgr) {
+		return false;
+	}
+
+	if (!gameSystem->m_isInCaveMaybe || !gameSystem->m_section) {
+		return false;
+	}
+
+	// If the cave is t_02 and we're on the last floor
+	if (gameSystem->m_section->getCaveID() == 't_02' || gameSystem->m_section->getCurrFloor() + 1 == mapMgr->m_caveInfo->getFloorMax()) {
+		return true;
+	}
+	return false;
 }
 }; // namespace Game
 

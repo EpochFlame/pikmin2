@@ -1,10 +1,9 @@
 #ifndef _GAME_BASEGAMESECTION_H
 #define _GAME_BASEGAMESECTION_H
 
+#include "DvdThreadCommand.h"
 #include "Game/BaseHIOSection.h"
 #include "Game/PikiContainer.h"
-#include "Camera.h"
-#include "DvdThreadCommand.h"
 #include "IDelegate.h"
 #include "Vector3.h"
 #include "Rect.h"
@@ -54,11 +53,11 @@ struct Pellet;
 struct PlayCamera;
 
 struct BaseGameSection : public BaseHIOSection {
-	struct ZoomCamera : public LookAtCamera {
-		virtual ~ZoomCamera() { } // _08 (weak)
-		virtual void doUpdate();  // _78
+	struct ZoomCamera {
+		~ZoomCamera();
 
-		void init(float, float, Vector3<float>&, Controller*);
+		void doUpdate();
+		void init(float, float, Vector3f&, struct Controller*);
 		void makeLookAt();
 	};
 
@@ -83,9 +82,9 @@ struct BaseGameSection : public BaseHIOSection {
 	virtual u32 getCaveID();                                                     // _78
 	virtual CourseInfo* getCurrentCourseInfo();                                  // _7C
 	virtual void challengeDisablePelplant();                                     // _80
-	virtual char* getCaveFilename();                                             // _84
-	virtual char* getEditorFilename();                                           // _88
-	virtual int getVsEditNumber();                                               // _8C
+	virtual void getCaveFilename();                                              // _84
+	virtual void getEditorFilename();                                            // _88
+	virtual void getVsEditNumber();                                              // _8C
 	virtual bool openContainerWindow();                                          // _90
 	virtual void closeContainerWindow();                                         // _94
 	virtual void playMovie_firstexperience(int, Game::Creature*);                // _98
@@ -93,7 +92,7 @@ struct BaseGameSection : public BaseHIOSection {
 	virtual void playMovie_helloPikmin(Game::Piki*);                             // _A0
 	virtual void enableTimer(float, unsigned long);                              // _A4
 	virtual void disableTimer(unsigned long);                                    // _A8
-	virtual u32 getTimerType();                                                  // _AC
+	virtual void getTimerType();                                                 // _AC
 	virtual void onMovieStart(Game::MovieConfig*, unsigned long, unsigned long); // _B0
 	virtual void onMovieDone(Game::MovieConfig*, unsigned long, unsigned long);  // _B4
 	virtual void onMovieCommand(int);                                            // _B8
