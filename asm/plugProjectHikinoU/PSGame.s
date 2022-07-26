@@ -259,9 +259,6 @@ lbl_8048FDF4:
 .balign 4
 lbl_8048FE04:
 	.asciz "get sound scene at\ninvalid timming\n"
-.balign 4
-lbl_gmp:
-	.asciz "gmp.bms"
 
 .section .data, "wa"  # 0x8049E220 - 0x804EFC20
 .balign 8
@@ -1945,27 +1942,10 @@ getMiddleBossBgm__Q26PSGame8PikSceneFv:
 /* 80335698 003325D8  93 C1 00 08 */	stw r30, 8(r1)
 /* 8033569C 003325DC  4B FF E8 01 */	bl getSeq__Q28PSSystem6SeqMgrFUl
 /* 803356A0 003325E0  7C 7E 1B 79 */	or. r30, r3, r3
-mr r20, r30
 /* 803356A4 003325E4  40 82 00 0C */	bne lbl_803356B0
 /* 803356A8 003325E8  38 60 00 00 */	li r3, 0
 /* 803356AC 003325EC  48 00 00 64 */	b lbl_80335710
 lbl_803356B0:
-# m_boss special replacement part 1
-# if cave id is t_02, and final floor, use gmp.bms
-# else, use m_boss.bms
-bl isGMP__4GameFv
-cmpwi r3, 0
-li r3, 0
-mr r30, r20
-beq normal
-lwz r31, 0x14(r30)
-lis r3, lbl_gmp@ha
-addi r4, r3, lbl_gmp@l
-mr r3, r31
-bl strcmp
-cmpwi r3, 0
-beq lbl_803356E4
-normal:
 /* 803356B0 003325F0  83 FE 00 14 */	lwz r31, 0x14(r30)
 /* 803356B4 003325F4  3C 60 80 49 */	lis r3, lbl_8048FAC4@ha
 /* 803356B8 003325F8  38 83 FA C4 */	addi r4, r3, lbl_8048FAC4@l
