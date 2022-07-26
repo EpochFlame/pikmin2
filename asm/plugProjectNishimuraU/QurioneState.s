@@ -674,7 +674,7 @@ exec__Q34Game7Qurione9StateMoveFPQ24Game9EnemyBase:
 /* 8025F840 0025C780  7F C3 F3 78 */	mr r3, r30
 /* 8025F844 0025C784  7F E4 FB 78 */	mr r4, r31
 /* 8025F848 0025C788  81 9E 00 00 */	lwz r12, 0(r30)
-/* 8025F84C 0025C78C  38 A0 00 02 */	li r5, 2
+/* 8025F84C 0025C78C  38 A0 00 02 */	li r5, 4 # honeywisp drop egg (4 rather than 2)
 /* 8025F850 0025C790  38 C0 00 00 */	li r6, 0
 /* 8025F854 0025C794  81 8C 00 1C */	lwz r12, 0x1c(r12)
 /* 8025F858 0025C798  7D 89 03 A6 */	mtctr r12
