@@ -34,7 +34,7 @@ void autopluck(NaviWalkState* walkstate, Navi* captain)
 
 void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 {
-	if (frog->getCreatureID() == EnemyTypeID::EnemyID_MaroFrog)
+	if (frog->getEnemyTypeID() == EnemyTypeID::EnemyID_MaroFrog)
 		return;
 
 	Vector3f fxPos;
@@ -45,6 +45,8 @@ void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 	efx::TSimple1 simpleFx(12, nullptr);
 	efx::Arg arg(fxPos);
 	simpleFx.create(&arg);
+
+	PSSystem::spSysIF->playSystemSe(PSSE_PK_SE_BOMB, 0);
 
 	cameraMgr->startVibration(12, fxPos, 2);
 	rumbleMgr->startRumble(15, fxPos, 2);
@@ -67,6 +69,21 @@ void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 	if (collCreature->isPiki() && collCreature->inWater()) {
 		collCreature->kill(nullptr);
 	}
+}
+
+void doFrogBombParticle(Game::EnemyBase* frog)
+{
+	if (frog->getEnemyTypeID() == EnemyTypeID::EnemyID_MaroFrog)
+		return;
+
+	Vector3f fxPos;
+	frog->getCommonEffectPos(fxPos);
+
+	efx::TSimple1 simpleFx(12, nullptr);
+	efx::Arg arg(fxPos);
+	simpleFx.create(&arg);
+
+	PSSystem::spSysIF->playSystemSe(PSSE_PK_SE_BOMB, 0);
 }
 }; // namespace Game
 
