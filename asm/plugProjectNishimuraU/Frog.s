@@ -1317,6 +1317,17 @@ cont:
 /* 802592AC 002561EC  C0 22 C7 94 */	lfs f1, lbl_8051AAF4@sda21(r2)
 /* 802592B0 002561F0  7F E3 FB 78 */	mr r3, r31
 /* 802592B4 002561F4  48 21 55 8D */	bl PSStartEnemyDownWatSE__FPQ24Game9EnemyBasef
+# if marofrog, do not bomb effect
+mr r3, r31
+lwz r12, 0(r3)
+lwz r12, 600(r12)
+mtctr r12
+bctrl
+cmpwi r3, 0x0012
+mr r3, r31
+beq banana
+bl doFrogBombParticle__4GameFPQ24Game9EnemyBase
+banana:
 /* 802592B8 002561F8  48 00 00 8C */	b lbl_80259344
 lbl_802592BC:
 /* 802592BC 002561FC  3C 60 80 4B */	lis r3, __vt__Q23efx5TBase@ha
