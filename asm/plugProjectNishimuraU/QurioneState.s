@@ -671,10 +671,21 @@ exec__Q34Game7Qurione9StateMoveFPQ24Game9EnemyBase:
 /* 8025F834 0025C774  EC 22 08 BA */	fmadds f1, f2, f2, f1
 /* 8025F838 0025C778  FC 01 00 40 */	fcmpo cr0, f1, f0
 /* 8025F83C 0025C77C  40 81 00 24 */	ble lbl_8025F860
+# check for Piklopedia game mode
+lwz r6, gameSystem__4Game@sda21(r13)
+cmplwi r6, 0
+beq lbl_8025F860 # end early
+lwz r0, 0x44(r6)
+cmpwi r0, 4
 /* 8025F840 0025C780  7F C3 F3 78 */	mr r3, r30
 /* 8025F844 0025C784  7F E4 FB 78 */	mr r4, r31
 /* 8025F848 0025C788  81 9E 00 00 */	lwz r12, 0(r30)
+beq zukanwisp
 /* 8025F84C 0025C78C  38 A0 00 02 */	li r5, 4 # honeywisp drop egg (4 rather than 2)
+b contwisp
+zukanwisp:
+/* 8025F84C 0025C78C  38 A0 00 02 */	li r5, 2 # piklopedia honeywisp
+contwisp:
 /* 8025F850 0025C790  38 C0 00 00 */	li r6, 0
 /* 8025F854 0025C794  81 8C 00 1C */	lwz r12, 0x1c(r12)
 /* 8025F858 0025C798  7D 89 03 A6 */	mtctr r12
