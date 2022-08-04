@@ -53,16 +53,15 @@ void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 
 	Creature* collCreature = event.m_collidingCreature;
 
-	InteractBomb bomb;
-	bomb.m_creature = frog;
-	bomb._08        = 10000.0f;
+	InteractBomb bomb(frog);
+	bomb.m_damage   = 10000.0f;
 
 	Vector3f curPos   = frog->getPosition();
 	Vector3f otherPos = collCreature->getPosition();
 	Vector3f direction(otherPos.x - curPos.x, 0, otherPos.z - curPos.z);
 
 	direction.normalise();
-	bomb._0C = Vector3f(direction.x * 50, 0, direction.z * 50);
+	bomb.m_velocity = Vector3f(direction.x * 50, 0, direction.z * 50);
 	collCreature->stimulate(bomb);
 
 	// Water can't save the Pikmin
