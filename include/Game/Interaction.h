@@ -117,8 +117,11 @@ struct InteractBomb : public Interaction {
 	virtual bool actPiki(Piki*);
 	virtual bool actNavi(Navi*);
 	virtual bool actEnemy(EnemyBase*);
-	
-	inline InteractBomb(Creature* creature) : Interaction(creature) {}
+
+	inline InteractBomb(Creature* creature)
+	    : Interaction(creature)
+	{
+	}
 
 	// _00 VTBL
 	// _04 Parent

@@ -54,7 +54,7 @@ void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
 	Creature* collCreature = event.m_collidingCreature;
 
 	InteractBomb bomb(frog);
-	bomb.m_damage   = 10000.0f;
+	bomb.m_damage = 10000.0f;
 
 	Vector3f curPos   = frog->getPosition();
 	Vector3f otherPos = collCreature->getPosition();
