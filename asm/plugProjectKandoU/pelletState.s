@@ -2807,7 +2807,7 @@ lbl_801A58CC:
 /* 801A58E8 001A2828  81 8C 01 F4 */	lwz r12, 0x1f4(r12)
 /* 801A58EC 001A282C  7D 89 03 A6 */	mtctr r12
 /* 801A58F0 001A2830  4E 80 04 21 */	bctrl 
-/* 801A58F4 001A2834  54 60 06 3F */	clrlwi. r0, r3, 0x18
+/* 801A58F4 001A2834  54 60 06 3F */	cmplwi r3, 1 # play first pellet cutscene upon first carcass collection
 /* 801A58F8 001A2838  40 82 00 DC */	bne lbl_801A59D4
 /* 801A58FC 001A283C  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 801A5900 001A2840  38 80 00 31 */	li r4, 0x31
