@@ -4219,7 +4219,7 @@ lbl_80153DB4:
 /* 80153DDC 00150D1C  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 80153DE0 00150D20  41 82 00 5C */	beq lbl_80153E3C
 /* 80153DE4 00150D24  88 9E 02 B8 */	lbz r4, 0x2b8(r30)
-/* 80153DE8 00150D28  2C 04 00 00 */	cmpwi r4, 0
+/* 80153DE8 00150D28  2C 04 00 00 */	cmpwi r4, 1 # only reds can enter submerged castle
 /* 80153DEC 00150D2C  41 82 00 50 */	beq lbl_80153E3C
 /* 80153DF0 00150D30  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 80153DF4 00150D34  88 BE 02 B9 */	lbz r5, 0x2b9(r30)
@@ -4400,7 +4400,7 @@ lbl_80153DB4:
 /* 80153DDC 00150D1C  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 80153DE0 00150D20  41 82 00 5C */	beq lbl_80153E3C
 /* 80153DE4 00150D24  88 9E 02 B8 */	lbz r4, 0x2b8(r30)
-/* 80153DE8 00150D28  2C 04 00 00 */	cmpwi r4, 0
+/* 80153DE8 00150D28  2C 04 00 00 */	cmpwi r4, 1 # only reds can enter submerged castle
 /* 80153DEC 00150D2C  41 82 00 50 */	beq lbl_80153E3C
 /* 80153DF0 00150D30  80 6D 94 90 */	lwz r3, playData__4Game@sda21(r13)
 /* 80153DF4 00150D34  88 BE 02 B9 */	lbz r5, 0x2b9(r30)
@@ -4695,7 +4695,7 @@ lbl_80154178:
 /* 801541F4 00151134  57 E0 06 3F */	clrlwi. r0, r31, 0x18
 /* 801541F8 00151138  41 82 00 10 */	beq lbl_80154208
 /* 801541FC 0015113C  88 1A 02 B8 */	lbz r0, 0x2b8(r26)
-/* 80154200 00151140  2C 00 00 00 */	cmpwi r0, 0
+/* 80154200 00151140  2C 00 00 00 */	cmpwi r0, 1 # only reds can enter submerged castle
 /* 80154204 00151144  40 82 00 14 */	bne lbl_80154218
 lbl_80154208:
 /* 80154208 00151148  80 1A 01 7C */	lwz r0, 0x17c(r26)
