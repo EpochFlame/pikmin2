@@ -3016,7 +3016,15 @@ lbl_8017EFF8:
 /* 8017F008 0017BF48  80 6D 93 E8 */	lwz r3, gameSystem__4Game@sda21(r13)
 /* 8017F00C 0017BF4C  80 03 00 44 */	lwz r0, 0x44(r3)
 /* 8017F010 0017BF50  2C 00 00 01 */	cmpwi r0, 1
-/* 8017F014 0017BF54  40 82 00 D4 */	bne lbl_8017F0E8
+/* 8017F014 0017BF54  40 82 00 D4 */	bgt lbl_8017F0E8
+beq lbl_versus # allow pickups in vsmode, require brute knuckles in story
+li r4, 0
+lwz r5, playData__4Game@sda21(r13)
+addi r3, r5, 0x48
+bl hasItem__Q24Game10OlimarDataFi
+cmplwi r3, 1
+bne lbl_8017F0E8
+lbl_versus:
 /* 8017F018 0017BF58  7F E3 FB 78 */	mr r3, r31
 /* 8017F01C 0017BF5C  81 9F 00 00 */	lwz r12, 0(r31)
 /* 8017F020 0017BF60  81 8C 00 7C */	lwz r12, 0x7c(r12)
@@ -3040,7 +3048,9 @@ lbl_8017EFF8:
 /* 8017F068 0017BFA8  7D 89 03 A6 */	mtctr r12
 /* 8017F06C 0017BFAC  4E 80 04 21 */	bctrl 
 /* 8017F070 0017BFB0  2C 03 00 24 */	cmpwi r3, 0x24
-/* 8017F074 0017BFB4  40 82 00 74 */	bne lbl_8017F0E8
+/* 8017F074 0017BFB4  40 82 00 74 */	blt lbl_8017F0E8
+cmpwi r3, 0x25
+bgt lbl_8017F0E8
 /* 8017F078 0017BFB8  80 7E 02 78 */	lwz r3, 0x278(r30)
 /* 8017F07C 0017BFBC  28 03 00 00 */	cmplwi r3, 0
 /* 8017F080 0017BFC0  41 82 00 68 */	beq lbl_8017F0E8
