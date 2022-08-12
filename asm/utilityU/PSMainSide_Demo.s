@@ -2526,9 +2526,9 @@ lbl_80465E64:
 /* 80465E64 00462DA4  54 00 06 3F */	clrlwi. r0, r0, 0x18
 /* 80465E68 00462DA8  41 82 00 1C */	beq lbl_80465E84
 /* 80465E6C 00462DAC  38 00 18 1C */	li r0, 0x181c
-/* 80465E70 00462DB0  3C 60 80 47 */	lis r3, PSChangeBgm_ChallengeGame__Fv@ha
+/* 80465E70 00462DB0  3C 60 80 47 */	lis r3, 0@ha
 /* 80465E74 00462DB4  90 17 00 1C */	stw r0, 0x1c(r23)
-/* 80465E78 00462DB8  38 03 B5 B8 */	addi r0, r3, PSChangeBgm_ChallengeGame__Fv@l
+/* 80465E78 00462DB8  38 03 B5 B8 */	addi r0, r3, 0@l
 /* 80465E7C 00462DBC  90 17 00 24 */	stw r0, 0x24(r23)
 /* 80465E80 00462DC0  48 00 01 60 */	b lbl_80465FE0
 lbl_80465E84:

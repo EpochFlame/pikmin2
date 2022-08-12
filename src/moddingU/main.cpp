@@ -87,6 +87,7 @@ void doFrogBombParticle(Game::EnemyBase* frog)
 }; // namespace Game
 
 namespace mod {
+bool isExitLocked;
 
 // adjust treasure culling radius to 50.0f if radius was zero
 float adjustBoundingRadius(float radius)
