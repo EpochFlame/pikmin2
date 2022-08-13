@@ -1063,3 +1063,9 @@ do_higher__Q24Game8LowscoreFii:
 /* 80234EEC 00231E2C  7C 00 18 50 */	subf r0, r0, r3
 /* 80234EF0 00231E30  54 03 0F FE */	srwi r3, r0, 0x1f
 /* 80234EF4 00231E34  4E 80 00 20 */	blr 
+
+.global isBobuRescued__Q24Game14PlayCommonDataFv
+isBobuRescued__Q24Game14PlayCommonDataFv:
+lbz r0, 0x14(r3)
+rlwinm r3, r0, 0x1e, 0x1f, 0x1f
+blr 
