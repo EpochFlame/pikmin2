@@ -15,6 +15,8 @@
 #include "efx/TSimple.h"
 #include "ObjectTypes.h"
 
+bool isTreasureCutscene;
+
 namespace Game {
 
 struct Navi {
@@ -30,6 +32,21 @@ void autopluck(NaviWalkState* walkstate, Navi* captain)
 {
 	captain->procActionButton();
 	walkstate->execAI(captain);
+}
+
+void allowSkipTreasureCutscene(MoviePlayer* movieplayer)
+// allows 251-style treasure cutscene skips
+{
+	if (isTreasureCutscene && movieplayer != nullptr) {
+		if (movieplayer->m_demoState == 6) {
+			isTreasureCutscene = false;
+			// OSReport("Treasure cutscene finished normally!");
+		} else if (((JUTGamePad::mPadStatus[0].button & 0x1000) != 0) && (movieplayer->m_demoState == 5)) {
+			isTreasureCutscene = false;
+			movieplayer->skip();
+			// OSReport("Treasure cutscene skipped successfully!);
+		}
+	}
 }
 
 void frogDeathSphere(Game::EnemyBase* frog, Game::CollEvent& event)
