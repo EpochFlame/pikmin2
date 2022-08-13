@@ -4366,6 +4366,8 @@ lbl_801B9860:
 lbl_801B9880:
 lwz r3, 0x2c(r31)
 lwz r0, 0x2e8(r3)
+# store keyLockCount
+stw r0, keyLockCount__3mod@sda21(r13)
 cmpwi r0, 0
 beq isNotLocked
 # check for Seesaw Thing in caveinfo

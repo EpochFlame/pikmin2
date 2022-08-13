@@ -88,6 +88,10 @@ void doFrogBombParticle(Game::EnemyBase* frog)
 
 namespace mod {
 bool isExitLocked;
+int keyLockCount;
+
+// decrement keyLockCount
+void keyLockDecrement() { keyLockCount--; }
 
 // adjust treasure culling radius to 50.0f if radius was zero
 float adjustBoundingRadius(float radius)

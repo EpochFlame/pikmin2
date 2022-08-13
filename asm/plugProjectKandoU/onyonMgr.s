@@ -4337,7 +4337,7 @@ lbl_801765D8:
 /* 801765F0 00173530  40 82 00 08 */	beq lbl_801765F4
 # is exit locked?
 lbz r0, isExitLocked__3mod@sda21(r13)
-cmpwi r0, 1
+cmplwi r0, 1
 bne lbl_801765F8
 lbl_801765F4:
 /* 801765F4 00173534  38 60 00 01 */	li r3, 1
@@ -4350,6 +4350,15 @@ lbl_801765F8:
 /* 8017660C 0017354C  4B F5 40 B5 */	bl strcmp
 /* 80176610 00173550  2C 03 00 00 */	cmpwi r3, 0
 /* 80176614 00173554  40 82 03 D8 */	bne lbl_801769EC
+lwz r3, gameSystem__4Game@sda21(r13)
+lwz r0, 0x44(r3)
+cmpwi r0, 0
+bne lbl_80176618
+bl keyLockDecrement__3modFv
+lwz r3, keyLockCount__3mod@sda21(r13)
+cmpwi r3, 0
+bne lbl_801769EC
+lbl_80176618:
 /* 80176618 00173558  3C 80 80 4B */	lis r4, __vt__Q24Game11Interaction@ha
 /* 8017661C 0017355C  80 6D 94 B0 */	lwz r3, mgr__Q24Game15ItemBigFountain@sda21(r13)
 /* 80176620 00173560  38 04 A3 00 */	addi r0, r4, __vt__Q24Game11Interaction@l
