@@ -93,6 +93,10 @@ lbl_8047EBD8:
 	.4byte 0x6F70696E
 	.4byte 0x67536D6F
 	.4byte 0x6B650000
+.balign 4
+.global lbl_rhnd
+lbl_rhnd:
+	.asciz "rhandjnt"
 
 .section .data, "wa"  # 0x8049E220 - 0x804EFC20
 .balign 8
@@ -14639,3 +14643,76 @@ __sinit_naviState_cpp:
 /* 8018936C 001862AC  7C 63 5A 14 */	add r3, r3, r11
 /* 80189370 001862B0  38 63 FF E0 */	addi r3, r3, -32
 /* 80189374 001862B4  4B FF E0 FC */	b onKeyEvent__Q24Game14NaviThrowStateFRCQ28SysShape8KeyEvent
+
+.global naviBomb
+naviBomb:
+/* 802B3130 002B0070  94 21 FF B0 */	stwu r1, -0x50(r1)
+/* 802B3134 002B0074  7C 08 02 A6 */	mflr r0
+/* 802B3138 002B0078  90 01 00 54 */	stw r0, 0x54(r1)
+/* 802B313C 002B007C  93 E1 00 4C */	stw r31, 0x4c(r1)
+/* 802B3140 002B0080  93 C1 00 48 */	stw r30, 0x48(r1)
+/* 802B3144 002B0084  7C 7E 1B 78 */	mr r30, r3
+/* 802B3154 002B0094  80 6D 91 E0 */	lwz r3, generalEnemyMgr__4Game@sda21(r13)
+/* 802B3158 002B0098  38 80 00 24 */	li r4, 0x24
+/* 802B315C 002B009C  4B E5 AB 49 */	bl getEnemyMgr__Q24Game15GeneralEnemyMgrFi
+/* 802B3160 002B00A0  7C 7F 1B 79 */	or. r31, r3, r3
+/* 802B3164 002B00A4  41 82 00 7C */	beq lbl_802B31E0_a
+/* 802B3168 002B00A8  38 61 00 08 */	addi r3, r1, 8
+/* 802B316C 002B00AC  4B E7 BA B9 */	bl __ct__Q24Game13EnemyBirthArgFv
+/* 802B3170 002B00B0  7F C3 F3 78 */	mr r3, r30
+/* 802B3174 002B00B4  81 9E 00 00 */	lwz r12, 0(r30)
+/* 802B3178 002B00B8  81 8C 00 64 */	lwz r12, 0x64(r12)
+/* 802B317C 002B00BC  7D 89 03 A6 */	mtctr r12
+/* 802B3180 002B00C0  4E 80 04 21 */	bctrl 
+/* 802B3184 002B00C4  D0 21 00 14 */	stfs f1, 0x14(r1)
+/* 802B3188 002B00C8  7F E3 FB 78 */	mr r3, r31
+/* 802B318C 002B00CC  38 81 00 08 */	addi r4, r1, 8
+/* 802B3190 002B00D0  81 9F 00 00 */	lwz r12, 0(r31)
+/* 802B3194 002B00D4  81 8C 00 70 */	lwz r12, 0x70(r12)
+/* 802B3198 002B00D8  7D 89 03 A6 */	mtctr r12
+/* 802B319C 002B00DC  4E 80 04 21 */	bctrl 
+/* 802B31A0 002B00E0  28 03 00 00 */	cmplwi r3, 0
+/* 802B31A4 002B00E4  41 82 00 3C */	beq lbl_802B31E0_a
+/* 802B31A8 002B00E8  90 7E 02 D8 */	stw r3, 0xb8(r30)
+/* 802B31AC 002B00EC  38 80 00 00 */	li r4, 0
+/* 802B31B0 002B00F0  80 7E 02 D8 */	lwz r3, 0xb8(r30)
+/* 802B31B4 002B00F4  4B E8 7E 15 */	bl init__Q24Game8CreatureFPQ24Game15CreatureInitArg
+/* 802B31B8 002B00F8  3C 80 80 49 */	lis r4, lbl_rhnd@ha
+/* 802B31BC 002B00FC  80 7E 01 74 */	lwz r3, 0x174(r30)
+/* 802B31C0 002B0100  38 84 A2 6C */	addi r4, r4, lbl_rhnd@l
+/* 802B31C4 002B0104  48 18 BE 21 */	bl getJoint__Q28SysShape5ModelFPc
+/* 802B31C8 002B0108  48 17 66 D9 */	bl getWorldMatrix__Q28SysShape5JointFv
+/* 802B31CC 002B010C  7C 64 1B 78 */	mr r4, r3
+/* 802B31D0 002B0110  80 7E 02 D8 */	lwz r3, 0xb8(r30)
+/* 802B31D4 002B0114  4B EE C8 D5 */	bl startCapture__Q24Game8CreatureFP7Matrixf
+/* 802B31D8 002B0118  80 7E 02 D8 */	lwz r3, 0xb8(r30)
+/* 802B31DC 002B011C  93 C3 02 CC */	stw r30, 0x2cc(r3)
+bl endCapturea__Q24Game8CreatureFv
+lbl_802B31E0_a:
+/* 802B31E0 002B0120  80 01 00 54 */	lwz r0, 0x54(r1)
+/* 802B31E4 002B0124  83 E1 00 4C */	lwz r31, 0x4c(r1)
+/* 802B31E8 002B0128  83 C1 00 48 */	lwz r30, 0x48(r1)
+/* 802B31EC 002B012C  7C 08 03 A6 */	mtlr r0
+/* 802B31F0 002B0130  38 21 00 50 */	addi r1, r1, 0x50
+/* 802B31F4 002B0134  4E 80 00 20 */	blr 
+
+.global endCapturea__Q24Game8CreatureFv
+endCapturea__Q24Game8CreatureFv:
+/* 8019FB9C 0019CADC  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8019FBA0 0019CAE0  7C 08 02 A6 */	mflr r0
+/* 8019FBA4 0019CAE4  38 80 00 01 */	li r4, 1
+/* 8019FBA8 0019CAE8  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8019FBAC 0019CAEC  38 00 00 00 */	li r0, 0
+/* 8019FBB0 0019CAF0  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8019FBB4 0019CAF4  7C 7F 1B 78 */	mr r31, r3
+/* 8019FBB8 0019CAF8  90 03 00 B8 */	stw r0, 0xb8(r3)
+/* 8019FBBC 0019CAFC  81 83 00 00 */	lwz r12, 0(r3)
+/* 8019FBC0 0019CB00  81 8C 00 A4 */	lwz r12, 0xa4(r12)
+/* 8019FBC4 0019CB04  7D 89 03 A6 */	mtctr r12
+/* 8019FBC8 0019CB08  4E 80 04 21 */	bctrl 
+/* 8019FBCC 0019CB0C  7F E3 FB 78 */	mr r3, r31
+/* 8019FBE0 0019CB20  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8019FBE4 0019CB24  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8019FBE8 0019CB28  7C 08 03 A6 */	mtlr r0
+/* 8019FBEC 0019CB2C  38 21 00 10 */	addi r1, r1, 0x10
+/* 8019FBF0 0019CB30  4E 80 00 20 */	blr 
