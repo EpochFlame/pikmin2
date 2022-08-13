@@ -1524,7 +1524,7 @@ lbl_801B704C:
 /* 801B7068 001B3FA8  40 82 00 08 */	beq lbl_801B706C
 # if exit is locked, lock exit
 lbz r0, isExitLocked__3mod@sda21(r13)
-cmpwi r0, 1
+cmplwi r0, 1
 bne lbl_801B7070
 lbl_801B706C:
 /* 801B706C 001B3FAC  38 60 00 01 */	li r3, 1
@@ -4364,6 +4364,20 @@ lbl_801B9860:
 /* 801B9878 001B67B8  41 82 FF 94 */	beq lbl_801B980C
 /* 801B987C 001B67BC  48 00 01 00 */	b lbl_801B997C
 lbl_801B9880:
+lwz r3, 0x2c(r31)
+lwz r0, 0x2e8(r3)
+cmpwi r0, 0
+beq isNotLocked
+# check for Seesaw Thing in caveinfo
+li r0, 1
+stb r0, isExitLocked__3mod@sda21(r13)
+b lbl_801B9880_a
+# case for Not Locked
+isNotLocked:
+li r0, 0
+stb r0, isExitLocked__3mod@sda21(r13)
+b lbl_801B9880_a
+lbl_801B9880_a:
 /* 801B9880 001B67C0  80 61 00 24 */	lwz r3, 0x24(r1)
 /* 801B9884 001B67C4  81 83 00 00 */	lwz r12, 0(r3)
 /* 801B9888 001B67C8  81 8C 00 20 */	lwz r12, 0x20(r12)
@@ -4445,13 +4459,13 @@ lbl_801B997C:
 /* 801B99A8 001B68E8  80 7F 00 2C */	lwz r3, 0x2c(r31)
 /* 801B99AC 001B68EC  80 03 02 E8 */	lwz r0, 0x2e8(r3)
 /* 801B99B0 001B68F0  2C 00 00 00 */	cmpwi r0, 0
-/* 801B99B4 001B68F4  41 82 01 6C */	beq isNotLocked
+/* 801B99B4 001B68F4  41 82 01 6C */	beq isNotLocked_a
 # check for Seesaw Thing in caveinfo
 li r0, 1
 stb r0, isExitLocked__3mod@sda21(r13)
 b lbl_801B9B20
 # case for Not Locked
-isNotLocked:
+isNotLocked_a:
 li r0, 0
 stb r0, isExitLocked__3mod@sda21(r13)
 b lbl_801B9B20
