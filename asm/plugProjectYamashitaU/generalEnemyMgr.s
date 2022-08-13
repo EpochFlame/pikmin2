@@ -2253,8 +2253,8 @@ allocateEnemys__Q24Game15GeneralEnemyMgrFUci:
 /* 8010D61C 0010A55C  40 80 00 68 */	bge lbl_8010D684
 # allocate 0x00300800 for enemies rather than 0x00200800
 # reverting this change as it is unnecessary
-/* 8010D620 0010A560  3C 60 00 20 */	lis r3, 0x00200800@ha
-/* 8010D624 0010A564  38 03 08 00 */	addi r0, r3, 0x00200800@l
+/* 8010D620 0010A560  3C 60 00 20 */	lis r3, 0x00300800@ha
+/* 8010D624 0010A564  38 03 08 00 */	addi r0, r3, 0x00300800@l
 /* 8010D628 0010A568  90 1D 00 50 */	stw r0, 0x50(r29)
 /* 8010D62C 0010A56C  80 6D 93 E8 */	lwz r3, gameSystem__4Game@sda21(r13)
 /* 8010D630 0010A570  28 03 00 00 */	cmplwi r3, 0
