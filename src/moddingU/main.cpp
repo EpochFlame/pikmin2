@@ -87,8 +87,9 @@ void doFrogBombParticle(Game::EnemyBase* frog)
 }; // namespace Game
 
 namespace mod {
-bool isExitLocked;
 int keyLockCount;
+bool isExitLocked;
+bool isBobuMovieQueued = FALSE;
 
 // decrement keyLockCount
 void keyLockDecrement() { keyLockCount--; }

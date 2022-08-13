@@ -942,6 +942,10 @@ isCompletePelletTrigger__Q24Game8PlayDataFv:
 /* 801E5E8C 001E2DCC  48 00 00 29 */	bl completeAll__Q24Game16PelletCropMemoryFv
 /* 801E5E90 001E2DD0  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 801E5E94 001E2DD4  41 82 00 0C */	beq lbl_801E5EA0
+# 100% completion enables challenge mode
+lwz r3, sys@sda21(r13)
+bl getPlayCommonData__6SystemFv
+bl enableChallengeGame__Q24Game14PlayCommonDataFv
 /* 801E5E98 001E2DD8  38 60 00 01 */	li r3, 1
 /* 801E5E9C 001E2DDC  48 00 00 08 */	b lbl_801E5EA4
 lbl_801E5EA0:
