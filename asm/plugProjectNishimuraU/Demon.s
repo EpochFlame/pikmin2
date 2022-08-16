@@ -213,22 +213,16 @@ __vt__Q34Game5Demon3Obj:
 
 .section .sdata2, "a"     # 0x80516360 - 0x80520E40
 .balign 8
-.global lbl_8051B930
 lbl_8051B930:
 	.4byte 0x40400000
-.global lbl_8051B934
 lbl_8051B934:
 	.4byte 0x40490FDB
-.global lbl_8051B938
 lbl_8051B938:
 	.4byte 0x3BB60B61
-.global lbl_8051B93C
 lbl_8051B93C:
 	.4byte 0x00000000
-.global lbl_8051B940
 lbl_8051B940:
 	.float 1.0
-	.4byte 0x00000000
 
 .section .text, "ax"  # 0x800056C0 - 0x80472F00
 .global __ct__Q34Game5Demon3ObjFv
@@ -290,7 +284,6 @@ getAttackableTarget__Q34Game5Demon3ObjFv:
 /* 8028E45C 0028B39C  93 C1 00 68 */	stw r30, 0x68(r1)
 /* 8028E460 0028B3A0  80 8D 9A EC */	lwz r4, sys@sda21(r13)
 /* 8028E464 0028B3A4  7C 7F 1B 78 */	mr r31, r3
-mr r11, r4
 /* 8028E468 0028B3A8  C0 43 02 D8 */	lfs f2, 0x2d8(r3)
 /* 8028E46C 0028B3AC  C0 24 00 54 */	lfs f1, 0x54(r4)
 /* 8028E470 0028B3B0  C0 02 D5 D0 */	lfs f0, lbl_8051B930@sda21(r2)
@@ -299,9 +292,6 @@ mr r11, r4
 /* 8028E47C 0028B3BC  C0 23 02 D8 */	lfs f1, 0x2d8(r3)
 /* 8028E480 0028B3C0  FC 01 00 40 */	fcmpo cr0, f1, f0
 /* 8028E484 0028B3C4  40 81 03 4C */	ble lbl_8028E7D0
-mr r3, r31
-bl releaseAllStickers__Q24Game8CreatureFv
-mr r4, r11
 /* 8028E488 0028B3C8  7F E4 FB 78 */	mr r4, r31
 /* 8028E48C 0028B3CC  38 61 00 44 */	addi r3, r1, 0x44
 /* 8028E490 0028B3D0  81 9F 00 00 */	lwz r12, 0(r31)

@@ -138,7 +138,7 @@ __vt__Q24Game12InteractBury:
 	.4byte 0
 	.4byte actCommon__Q24Game11InteractionFPQ24Game8Creature
 	.4byte actPiki__Q24Game12InteractBuryFPQ24Game4Piki
-	.4byte actNavi__Q24Game12InteractBuryFPQ24Game4Navi
+	.4byte actNavi__Q24Game16InteractFallMeckFPQ24Game4Navi
 	.4byte actEnemy__Q24Game11InteractionFPQ24Game9EnemyBase
 	.4byte actPellet__Q24Game11InteractionFPQ24Game6Pellet
 	.4byte actOnyon__Q24Game11InteractionFPQ24Game5Onyon

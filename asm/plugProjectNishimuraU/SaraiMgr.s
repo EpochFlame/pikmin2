@@ -310,7 +310,6 @@ __vt__Q34Game5Sarai3Mgr:
 	.4byte doLoadBmd__Q24Game12EnemyMgrBaseFPv
 	.4byte doLoadBdl__Q24Game12EnemyMgrBaseFPv
 	.4byte initGenerator__Q24Game12EnemyMgrBaseFv
-	.4byte 0
 
 .section .sdata2, "a"     # 0x80516360 - 0x80520E40
 .balign 8
