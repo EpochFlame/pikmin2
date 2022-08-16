@@ -2361,6 +2361,11 @@ lbl_8010D798:
 /* 8010D7A0 0010A6E0  41 80 FF B0 */	blt lbl_8010D750
 /* 8010D7A4 0010A6E4  80 6D 9A EC */	lwz r3, sys@sda21(r13)
 /* 8010D7A8 0010A6E8  48 31 5B C9 */	bl heapStatusNormal__6SystemFv
+mr r3, r29
+li r4, 2
+li r5, 0x24
+li r6, 10
+bl createEnemyMgr__Q24Game15GeneralEnemyMgrFUcii
 /* 8010D7AC 0010A6EC  80 6D 9A EC */	lwz r3, sys@sda21(r13)
 /* 8010D7B0 0010A6F0  38 9F 00 88 */	addi r4, r31, 0x88
 /* 8010D7B4 0010A6F4  48 31 5B B1 */	bl heapStatusEnd__6SystemFPc
