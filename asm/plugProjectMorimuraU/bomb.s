@@ -275,11 +275,7 @@ lbl_8051E368:
 	.float 0.5
 .global lbl_8051E36C
 lbl_8051E36C:
-	.byte 0x3F
-.global lbl_8051E36D
-lbl_8051E36D:
-	.byte 0xA6
-	.2byte 0x6666
+	.float 1.3
 
 .section .text, "ax"  # 0x800056C0 - 0x80472F00
 .global setParameters__Q34Game4Bomb3ObjFv
@@ -336,9 +332,9 @@ onStartCapture__Q34Game4Bomb3ObjFv:
 /* 8034A2D4 00347214  80 6D 93 E8 */	lwz r3, gameSystem__4Game@sda21(r13)
 /* 8034A2D8 00347218  28 03 00 00 */	cmplwi r3, 0
 /* 8034A2DC 0034721C  41 82 00 20 */	beq lbl_8034A2FC
-/* 8034A2E0 00347220  80 03 00 44 */	lwz r0, 0x44(r3)
-/* 8034A2E4 00347224  2C 00 00 01 */	cmpwi r0, 1
-/* 8034A2E8 00347228  40 82 00 14 */	bne lbl_8034A2FC
+#/* 8034A2E0 00347220  80 03 00 44 */	lwz r0, 0x44(r3)
+#/* 8034A2E4 00347224  2C 00 00 01 */	cmpwi r0, 1
+#/* 8034A2E8 00347228  40 82 00 14 */	bne lbl_8034A2FC
 /* 8034A2EC 0034722C  80 1F 01 E0 */	lwz r0, 0x1e0(r31)
 /* 8034A2F0 00347230  54 00 00 3C */	rlwinm r0, r0, 0, 0, 0x1e
 /* 8034A2F4 00347234  90 1F 01 E0 */	stw r0, 0x1e0(r31)
