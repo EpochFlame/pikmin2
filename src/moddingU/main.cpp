@@ -1,5 +1,7 @@
 #include "types.h"
 #include "Dolphin/os.h"
+#include "Game/AIConstants.h"
+#include "Game/PlayData.h"
 #include "Game/GameSystem.h"
 #include "Game/CameraMgr.h"
 #include "Game/CollEvent.h"
@@ -101,6 +103,30 @@ void doFrogBombParticle(Game::EnemyBase* frog)
 
 	PSSystem::spSysIF->playSystemSe(PSSE_PK_SE_BOMB, 0);
 }
+
+bool isLowGravity()
+{
+	if (playData->getCurrentCourseIndex() == 3) {
+		if (gameSystem->m_isInCaveMaybe) {
+			return false;
+		} else {
+			return true;
+		}
+	} else {
+		return false;
+	}
+}
+
+void setLowGravity(void)
+{
+	static float backupGravity = _aiConstants->m_gravity.m_data;
+	if (isLowGravity()) {
+		_aiConstants->m_gravity.m_data = (backupGravity * 0.75f);
+	} else {
+		_aiConstants->m_gravity.m_data = backupGravity;
+	}
+}
+
 }; // namespace Game
 
 namespace mod {
