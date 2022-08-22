@@ -121,7 +121,7 @@ void setLowGravity(void)
 {
 	static float backupGravity = _aiConstants->m_gravity.m_data;
 	if (isLowGravity()) {
-		_aiConstants->m_gravity.m_data = (backupGravity * 0.75f);
+		_aiConstants->m_gravity.m_data = (backupGravity * 0.4f);
 	} else {
 		_aiConstants->m_gravity.m_data = backupGravity;
 	}
