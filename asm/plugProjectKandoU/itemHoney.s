@@ -2303,7 +2303,7 @@ getCreatureName__Q34Game9ItemHoney4ItemFv:
 
 .global absorbable__Q34Game9ItemHoney10TouchStateFv
 absorbable__Q34Game9ItemHoney10TouchStateFv:
-/* 801D4450 001D1390  38 60 00 01 */	li r3, 1
+/* 801D4450 001D1390  38 60 00 01 */	li r3, 2
 /* 801D4454 001D1394  4E 80 00 20 */	blr 
 
 .global interactAbsorb__Q34Game9ItemHoney11ShrinkStateFPQ24Game8CFSMItemRQ24Game14InteractAbsorb
@@ -2318,7 +2318,7 @@ absorbable__Q34Game9ItemHoney11ShrinkStateFv:
 
 .global absorbable__Q34Game9ItemHoney9WaitStateFv
 absorbable__Q34Game9ItemHoney9WaitStateFv:
-/* 801D4468 001D13A8  38 60 00 01 */	li r3, 1
+/* 801D4468 001D13A8  38 60 00 01 */	li r3, 2
 /* 801D446C 001D13AC  4E 80 00 20 */	blr 
 
 .global onKeyEvent__Q34Game9ItemHoney5StateFPQ24Game8CFSMItemRCQ28SysShape8KeyEvent
