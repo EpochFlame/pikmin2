@@ -177,6 +177,8 @@ lbl_8051C470:
 .global lbl_8051C474
 lbl_8051C474:
 	.4byte 0x40000000
+lbl_60:
+	.float 60.0
 
 .section .text, "ax"  # 0x800056C0 - 0x80472F00
 .global init__Q34Game6Houdai3FSMFPQ24Game9EnemyBase
@@ -1388,6 +1390,9 @@ lbl_802BEBBC:
 /* 802BEBC8 002BBB08  4B E4 87 39 */	bl isFinishMotion__Q24Game9EnemyBaseFv
 /* 802BEBCC 002BBB0C  54 60 06 3F */	clrlwi. r0, r3, 0x18
 /* 802BEBD0 002BBB10  40 82 01 24 */	bne lbl_802BECF4
+mr r3, r31
+lfs f1, lbl_60@sda21(r2)
+bl setAnimSpeed__Q24Game9EnemyBaseFf
 /* 802BEBD4 002BBB14  80 BF 00 C0 */	lwz r5, 0xc0(r31)
 /* 802BEBD8 002BBB18  7F E3 FB 78 */	mr r3, r31
 /* 802BEBDC 002BBB1C  C0 82 E0 FC */	lfs f4, lbl_8051C45C@sda21(r2)
@@ -1483,6 +1488,8 @@ cleanup__Q34Game6Houdai9StateShotFPQ24Game9EnemyBase:
 /* 802BED24 002BBC64  48 00 21 F5 */	bl finishBlendMotion__Q34Game6Houdai3ObjFv
 /* 802BED28 002BBC68  7F E3 FB 78 */	mr r3, r31
 /* 802BED2C 002BBC6C  48 00 28 7D */	bl finishBossAttackLoopBGM__Q34Game6Houdai3ObjFv
+mr r3, r31
+bl resetAnimSpeed__Q24Game9EnemyBaseFv
 /* 802BED30 002BBC70  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 802BED34 002BBC74  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 802BED38 002BBC78  7C 08 03 A6 */	mtlr r0
