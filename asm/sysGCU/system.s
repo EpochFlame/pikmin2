@@ -52,6 +52,7 @@ lbl_804998CC:
 .balign 4
 lbl_804998DC:
 	.asciz "CPU LOCKED!"
+.balign 4
 str_MapFileName:
 	.asciz "/pikmin2UP.map"
 .balign 4
